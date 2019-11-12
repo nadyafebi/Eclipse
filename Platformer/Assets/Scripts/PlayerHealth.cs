@@ -15,16 +15,19 @@ public class PlayerHealth : MonoBehaviour {
 
     public float maxHealth;
     public float currentHealth;
-    public Image healthBar; //UI Bar
+    public GameObject healthBarObject; //UI Bar
     public GameManager gameManager;
     private SpriteRenderer playerSprite;
     private CharacterController2D characterController2D;
+    private HealthBar healthBar;
 
     void Start () {
-        currentHealth = maxHealth; //At start of scene, player gets max health
-        healthBar.fillAmount = currentHealth;
+        healthBar = healthBarObject.GetComponent<HealthBar>();
         playerSprite = GetComponent<SpriteRenderer>();
         characterController2D = GetComponent<CharacterController2D>();
+
+        currentHealth = maxHealth; //At start of scene, player gets max health
+        healthBar.Set((int)currentHealth);
     }
 	
     //Deals damage to player base on specified amount and updates UI and stats
@@ -34,8 +37,8 @@ public class PlayerHealth : MonoBehaviour {
         {
 
             currentHealth -= damage;
-            float health = currentHealth / maxHealth;
-            healthBar.fillAmount = health;
+            // float health = currentHealth / maxHealth;
+            healthBar.Set((int)currentHealth);
             if(currentHealth <= 0)      //If health goes to 0 or below, call GameOver in GameManager
             {
                 gameManager.GameOver();
@@ -51,8 +54,8 @@ public class PlayerHealth : MonoBehaviour {
         if (currentHealth > maxHealth) //If health goes above max health then cap it at max health
             currentHealth = maxHealth;
 
-        float health = currentHealth / maxHealth;
-        healthBar.fillAmount = health;
+        // float health = currentHealth / maxHealth;
+        healthBar.Set((int)currentHealth);
     }
 
     //ONTriggerEnter2D is called when another trigger collider hits any of the player's colliders
