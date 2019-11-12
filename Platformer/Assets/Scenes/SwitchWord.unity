@@ -3218,6 +3218,7 @@ MonoBehaviour:
   moonWorld: {fileID: 154546195}
   sunPlayer: {fileID: 149160662}
   moonPlayer: {fileID: 710207164}
+  cameraObject: {fileID: 1291058270}
 --- !u!1 &1036162129
 GameObject:
   m_ObjectHideFlags: 0
