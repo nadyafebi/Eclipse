@@ -1,57 +1,64 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class SwitchWorld : MonoBehaviour
 {
+    [System.Serializable]
+    public enum WorldMode {Sun, Moon};
+
+    public WorldMode active;
+
     public GameObject sunWorld;
     public GameObject moonWorld;
-    public bool sunActive = false;
+    public GameObject sunPlayer;
+    public GameObject moonPlayer;
+    public GameObject cameraObject;
 
-    // Start is called before the first frame update
+    private CinemachineVirtualCamera m_camera;
+
     void Start()
     {
-        if (sunActive)
-        {
-            ShowWorld(moonWorld, false);
-            ShowWorld(sunWorld, true);
-        }
-        else
-        {
-            ShowWorld(sunWorld, false);
-            ShowWorld(moonWorld, true);
-        }
+        m_camera = cameraObject.GetComponent<CinemachineVirtualCamera>();
+        Set(active);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Switch world whenever a key is pressed.
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (sunActive)
-            {
-                ShowWorld(moonWorld, true);
-                ShowWorld(sunWorld, false);
-            }
-            else
-            {
-                ShowWorld(sunWorld, true);
-                ShowWorld(moonWorld, false);
-            }
-            sunActive = !sunActive;
+            Switch();
         }
     }
 
-    void ShowWorld(GameObject world, bool show)
+    public void Switch()
     {
-        Vector3 currentPos = world.transform.position;
-        if (show)
+        if (active == WorldMode.Moon)
         {
-            world.transform.position = new Vector3(currentPos.x, currentPos.y, 0);
+            Set(WorldMode.Sun);
         }
         else
         {
-            world.transform.position = new Vector3(currentPos.x, currentPos.y, -50);
+            Set(WorldMode.Moon);
+        }
+    }
+
+    public void Set(WorldMode mode)
+    {
+        active = mode;
+        if (active == WorldMode.Moon)
+        {
+            sunWorld.SetActive(false);
+            moonWorld.SetActive(true);
+            m_camera.Follow = moonPlayer.transform;
+        }
+        else
+        {
+            moonWorld.SetActive(false);
+            sunWorld.SetActive(true);
+            m_camera.Follow = sunPlayer.transform;
         }
     }
 }
