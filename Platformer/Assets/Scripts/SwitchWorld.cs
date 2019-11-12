@@ -14,13 +14,13 @@ public class SwitchWorld : MonoBehaviour
     public GameObject moonWorld;
     public GameObject sunPlayer;
     public GameObject moonPlayer;
-    public GameObject cameraObject;
+    public GameObject cameraControl;
 
     private CinemachineVirtualCamera m_camera;
 
     void Start()
     {
-        m_camera = cameraObject.GetComponent<CinemachineVirtualCamera>();
+        m_camera = cameraControl.GetComponent<CinemachineVirtualCamera>();
         Set(active);
     }
 
