@@ -34,4 +34,7 @@ public class PlayerMovement : MonoBehaviour {
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
     }
+    public float pushPower = 2.0F;
+
+    
 }
