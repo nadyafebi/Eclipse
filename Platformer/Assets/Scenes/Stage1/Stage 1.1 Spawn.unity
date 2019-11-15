@@ -183,6 +183,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114600917398554040, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: healthBarObject
+      value: 
+      objectReference: {fileID: 1368160891}
     - target: {fileID: 212441263472878830, guid: 5039a551e8afdea41b5b04561da1d70a,
         type: 3}
       propertyPath: m_Sprite
@@ -193,6 +198,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UsedByEffector
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421021764413650, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: m_JumpForceOnEnemies
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421021764413650, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: m_JumpForce
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 114062073148669802, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: runSpeed
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5039a551e8afdea41b5b04561da1d70a, type: 3}
@@ -4984,6 +5004,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1368160891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6215560260409224462, guid: cfa7363daa03ca1418615da9826df34d,
+    type: 3}
+  m_PrefabInstance: {fileID: 678363740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375823850
 GameObject:
   m_ObjectHideFlags: 0
