@@ -50,7 +50,8 @@ public class HealthBar : MonoBehaviour
             int last = orbs.Count - 1;
             GameObject lastOrb = orbs[last];
             orbs.RemoveAt(last);
-            Destroy(lastOrb);
+            lastOrb.GetComponent<Animator>().SetBool("Vanish", true);
+            Destroy(lastOrb, 1.5f);
         }
     }
 
