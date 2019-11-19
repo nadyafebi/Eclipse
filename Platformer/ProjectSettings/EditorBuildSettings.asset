@@ -22,4 +22,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage1/Stage 1.1 Spawn.unity
     guid: 87b6d1618ec543e49a47860db479025b
 >>>>>>> ac05a9d63fc878d93b529baaabe175a5d517d85b
+  m_Scenes: []
   m_configObjects: {}
