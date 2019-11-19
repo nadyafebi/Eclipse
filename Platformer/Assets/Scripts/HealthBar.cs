@@ -12,6 +12,11 @@ public class HealthBar : MonoBehaviour
     public GameObject orb;
 
     /// <summary>
+    /// Size of individual orb.
+    /// </summary>
+    public float orbSize;
+
+    /// <summary>
     /// Gap between each orbs.
     /// </summary>
     [Tooltip("Gap between each orbs.")]
@@ -19,12 +24,6 @@ public class HealthBar : MonoBehaviour
 
     private List<GameObject> orbs = new List<GameObject>();
 
-    private float orbSize;
-
-    void Start()
-    {
-        orbSize = orb.GetComponent<Image>().sprite.rect.width;
-    }
 
     /// <summary>
     /// Adds an orb to the health bar.
