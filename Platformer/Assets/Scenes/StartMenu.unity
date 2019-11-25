@@ -669,7 +669,8 @@ MonoBehaviour:
   creditsButton: {fileID: 1624386775}
   quitButton: {fileID: 434594209}
   fadeOut: {fileID: 2228404}
-  menuSound: {fileID: 8300000, guid: ec18d213b8f753543bdcd777b806f21c, type: 3}
+  menuSelect: {fileID: 8300000, guid: ec18d213b8f753543bdcd777b806f21c, type: 3}
+  menuClick: {fileID: 8300000, guid: 1135bb6bbca187e4e80112fc61c19bd8, type: 3}
 --- !u!82 &1600261711
 AudioSource:
   m_ObjectHideFlags: 0

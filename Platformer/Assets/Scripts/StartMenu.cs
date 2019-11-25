@@ -12,7 +12,9 @@ public class StartMenu : MonoBehaviour
 
     public Image fadeOut;
 
-    public AudioClip menuSound;
+    public AudioClip menuSelect;
+
+    public AudioClip menuClick;
 
     private AudioSource audioSource;
     
@@ -28,20 +30,30 @@ public class StartMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Horizontal"))
         {
-            audioSource.PlayOneShot(menuSound);
+            audioSource.PlayOneShot(menuSelect);
         }
     }
 
     /// <summary>
-    /// Dummy function to start the Play co-routine.
+    /// Dummy function to start the play coroutine.
     /// </summary>
     void play()
     {
         StartCoroutine(play(3.0f));
     }
 
+    /// <summary>
+    /// Dummy function to start the play coroutine.
+    /// </summary>
+    void quit()
+    {
+        StartCoroutine(quit(1.0f));
+    }
+
     IEnumerator play(float fadeOutDuration)
     {
+        audioSource.PlayOneShot(menuClick);
+
         // Fade the screen to black.
         fadeOut.color = Color.black;
         fadeOut.canvasRenderer.SetAlpha(0.0f);
@@ -60,11 +72,20 @@ public class StartMenu : MonoBehaviour
 
     void showCredits()
     {
-
+        audioSource.PlayOneShot(menuClick);
     }
 
-    void quit()
+    IEnumerator quit(float fadeOutDuration)
     {
+        audioSource.PlayOneShot(menuClick);
+
+        // Fade the screen to black.
+        fadeOut.color = Color.black;
+        fadeOut.canvasRenderer.SetAlpha(0.0f);
+        fadeOut.CrossFadeAlpha(1.0f, fadeOutDuration, false);
+
+        yield return new WaitForSeconds(fadeOutDuration);
+
         # if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         # else
