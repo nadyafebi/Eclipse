@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    public GameObject camera;
+    public GameObject cam;
     
     [Range(0f, 1f)]
     public float effect = 0.5f;
@@ -20,14 +20,8 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float temp = camera.transform.position.x * (1 - effect);
-        float dist = camera.transform.position.x * effect;
+        float dist = cam.transform.position.x * effect;
 
         transform.position = new Vector3(startX + dist, transform.position.y, transform.position.z);
-
-        // if (temp > startX)
-        // {
-        //     startX += length;
-        // }
     }
 }

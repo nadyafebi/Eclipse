@@ -4439,7 +4439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a36a84084326e4cb32721763ce43f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 171093362}
+  cam: {fileID: 171093362}
   effect: 0.25
 --- !u!1 &588380460
 GameObject:
@@ -4579,7 +4579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a36a84084326e4cb32721763ce43f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 171093362}
+  cam: {fileID: 171093362}
   effect: 0.1
 --- !u!1 &669369379
 GameObject:
