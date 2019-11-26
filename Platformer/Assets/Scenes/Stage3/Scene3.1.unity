@@ -24500,7 +24500,7 @@ GameObject:
   - component: {fileID: 2126058584}
   - component: {fileID: 2126058583}
   - component: {fileID: 2126058589}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: block
   m_Icon: {fileID: 0}
