@@ -9,6 +9,7 @@ public class ButtonAndWall : MonoBehaviour
     //public GameObject button;
     public GameObject block;
     public GameObject wall;
+    public GameObject noBZone;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class ButtonAndWall : MonoBehaviour
     {
         if (GetComponent<Rigidbody2D>().IsTouching(block.GetComponent<Collider2D>())){
             wall.SetActive(false);
+            noBZone.SetActive(false);
         }
     }
 
