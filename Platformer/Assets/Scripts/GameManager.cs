@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
     //Restarts Players health and position with a .5 second delay
     IEnumerator RestartGame(PlayerHealth playerHealth)
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.1f);
         playerHealth.HealDamage(playerHealth.maxHealth);
         player.transform.position = SpawnPosition.position;
 
