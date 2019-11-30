@@ -18,9 +18,12 @@ public class SwitchWorld : MonoBehaviour
 
     private CinemachineVirtualCamera m_camera;
 
+    private AudioManager audioManager;
+
     void Start()
     {
         m_camera = cameraControl.GetComponent<CinemachineVirtualCamera>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         Set(active);
     }
 
@@ -53,12 +56,14 @@ public class SwitchWorld : MonoBehaviour
             sunWorld.SetActive(false);
             moonWorld.SetActive(true);
             m_camera.Follow = moonPlayer.transform;
+            audioManager.SetPitch(0.75f);
         }
         else
         {
             moonWorld.SetActive(false);
             sunWorld.SetActive(true);
             m_camera.Follow = sunPlayer.transform;
+            audioManager.SetPitch(1.25f);
         }
     }
 }

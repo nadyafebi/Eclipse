@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    public string startSceneName;
+
     public Button playButton;
     public Button creditsButton;
     public Button quitButton;
@@ -17,10 +19,14 @@ public class StartMenu : MonoBehaviour
     public AudioClip menuClick;
 
     private AudioSource audioSource;
+
+    private AudioManager audioManager;
     
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
         playButton.onClick.AddListener(play);
         creditsButton.onClick.AddListener(showCredits);
         quitButton.onClick.AddListener(quit);
@@ -60,14 +66,9 @@ public class StartMenu : MonoBehaviour
         fadeOut.CrossFadeAlpha(1.0f, fadeOutDuration, false);
 
         // Fade the audio too.
-        float startVolume = audioSource.volume;
-        while (audioSource.volume > 0)
-        {
-            audioSource.volume -= startVolume * Time.deltaTime / fadeOutDuration;
-            yield return null;
-        }
+        yield return audioManager.FadeAudio(fadeOutDuration);
         
-        SceneManager.LoadScene("Stage 1.1 Spawn");
+        SceneManager.LoadScene(startSceneName);
     }
 
     void showCredits()
