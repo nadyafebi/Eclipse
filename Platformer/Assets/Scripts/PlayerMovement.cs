@@ -13,18 +13,24 @@ public class PlayerMovement : MonoBehaviour {
     bool jump = false;
     public CharacterController2D controller;
 
+    private Animator animator;
+
     void Start()
     {
         controller = GetComponent<CharacterController2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("Jump", true);
         }
     }
 
@@ -36,5 +42,8 @@ public class PlayerMovement : MonoBehaviour {
     }
     public float pushPower = 2.0F;
 
-    
+    public void OnLanding()
+    {
+        animator.SetBool("Jump", false);
+    }
 }

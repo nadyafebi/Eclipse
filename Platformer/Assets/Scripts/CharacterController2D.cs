@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour {
 
@@ -28,6 +29,8 @@ public class CharacterController2D : MonoBehaviour {
     private int m_AirJumpsLeft;
     private Vector3 m_Velocity = Vector3.zero;
 
+    public UnityEvent OnLandEvent;
+
     [HideInInspector] public Rigidbody2D m_RigidBody2D;
     //private Animator animator; //If using animations
 
@@ -35,13 +38,25 @@ public class CharacterController2D : MonoBehaviour {
     {
         m_RigidBody2D = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>(); //get animator component
+
+        if (OnLandEvent == null)
+        {
+            OnLandEvent = new UnityEvent();
+        }
     }
 
     void FixedUpdate()
     {
+        bool wasGrounded = m_Grounded;
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
         if (m_Grounded)
+        {
             m_AirJumpsLeft = m_AirJumps;
+            if (!wasGrounded)
+            {
+                OnLandEvent.Invoke();
+            }
+        }
     }
 
     private void Update()
