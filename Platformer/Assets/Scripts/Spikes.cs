@@ -13,8 +13,9 @@ public class Spikes : MonoBehaviour
         {
             if (player.transform.position.y - player.transform.position.y >= 0)
             {
-                player.GetComponent<CharacterController2D>().Move(player.GetComponent<Rigidbody2D>().velocity.x, true);
-               // m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForceOnEnemies);
+                //player.GetComponent<CharacterController2D>().Move(player.GetComponent<Rigidbody2D>().velocity.x, true);
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, 1000f));
+                // m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForceOnEnemies);
             }
         }
     }
