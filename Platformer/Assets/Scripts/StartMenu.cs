@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public string startSceneName;
+    public string creditSceneName;
 
     public Button playButton;
     public Button creditsButton;
@@ -49,7 +50,15 @@ public class StartMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Dummy function to start the play coroutine.
+    /// Dummy function to start the showCredits coroutine.
+    /// </summary>
+    void showCredits()
+    {
+        StartCoroutine(showCredits(1.0f));
+    }
+
+    /// <summary>
+    /// Dummy function to start the quit coroutine.
     /// </summary>
     void quit()
     {
@@ -71,9 +80,19 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene(startSceneName);
     }
 
-    void showCredits()
+    IEnumerator showCredits(float fadeOutDuration)
     {
         audioSource.PlayOneShot(menuClick);
+
+        // Fade the screen to black.
+        fadeOut.color = Color.black;
+        fadeOut.canvasRenderer.SetAlpha(0.0f);
+        fadeOut.CrossFadeAlpha(1.0f, fadeOutDuration, false);
+
+        // Fade the audio too.
+        yield return audioManager.FadeAudio(fadeOutDuration);
+        
+        SceneManager.LoadScene(creditSceneName);
     }
 
     IEnumerator quit(float fadeOutDuration)

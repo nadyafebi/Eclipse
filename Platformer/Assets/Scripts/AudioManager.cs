@@ -19,10 +19,21 @@ public class AudioManager : MonoBehaviour
 
     private Dictionary<string, AudioClip> musics = new Dictionary<string, AudioClip>();
 
+    private static bool created = false;
+
     void Awake()
     {
         // This makes the game object goes over to the next scene.
         DontDestroyOnLoad(this);
+
+        if (!created)
+        {
+            created = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
