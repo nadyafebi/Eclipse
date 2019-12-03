@@ -192,7 +192,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0658a7446c8b86b4eb1cf680e96301e9,
+      objectReference: {fileID: 21300000, guid: 07fa74f894ffa4a4488fd33c2d58f03c,
         type: 3}
     - target: {fileID: 58208475803228028, guid: 5039a551e8afdea41b5b04561da1d70a,
         type: 3}
@@ -209,6 +209,11 @@ PrefabInstance:
       propertyPath: runSpeed
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 4177882503953305098, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dfc871273087e9e4586f806ffd42aca6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5039a551e8afdea41b5b04561da1d70a, type: 3}
 --- !u!1 &13740270

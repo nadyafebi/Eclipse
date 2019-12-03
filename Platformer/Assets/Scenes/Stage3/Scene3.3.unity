@@ -869,7 +869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135305399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5199904, y: -3.1083531, z: -10}
+  m_LocalPosition: {x: -6.5199943, y: -3.1083531, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18105,6 +18105,17 @@ PrefabInstance:
       propertyPath: healthBarObject
       value: 
       objectReference: {fileID: 1581558033}
+    - target: {fileID: 212441263472878830, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 07fa74f894ffa4a4488fd33c2d58f03c,
+        type: 3}
+    - target: {fileID: 4177882503953305098, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dfc871273087e9e4586f806ffd42aca6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5039a551e8afdea41b5b04561da1d70a, type: 3}
 --- !u!4 &2030630406 stripped
