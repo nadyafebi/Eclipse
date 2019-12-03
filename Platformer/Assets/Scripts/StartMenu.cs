@@ -109,7 +109,7 @@ public class StartMenu : MonoBehaviour
         # if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         # else
-        Application.quit();
+        Application.Quit();
         # endif
     }
 }
