@@ -22,13 +22,8 @@ public class SwitchWorld : MonoBehaviour
 
     void Start()
     {
+        audioManager = GameManager.GetAudioManager();
         m_camera = cameraControl.GetComponent<CinemachineVirtualCamera>();
-
-        GameObject audioObject = GameObject.Find("AudioManager");
-        if (audioObject)
-        {
-            audioManager = audioObject.GetComponent<AudioManager>();
-        }
 
         Set(active);
     }
