@@ -16,12 +16,13 @@ public class PlayerHealth : MonoBehaviour {
     public float maxHealth;
     public float currentHealth;
     public GameObject healthBarObject; //UI Bar
-    public GameManager gameManager;
+    private GameManager gameManager;
     private SpriteRenderer playerSprite;
     private CharacterController2D characterController2D;
     private HealthBar healthBar;
 
     void Start () {
+        gameManager = GameManager.Get();
         healthBar = healthBarObject.GetComponent<HealthBar>();
         playerSprite = GetComponent<SpriteRenderer>();
         characterController2D = GetComponent<CharacterController2D>();

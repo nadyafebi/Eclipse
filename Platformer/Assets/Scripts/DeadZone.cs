@@ -8,10 +8,10 @@ using UnityEngine;
 public class DeadZone : MonoBehaviour {
 
 
-    public GameManager gameManager;
+    private GameManager gameManager;
 	// Use this for initialization
 	void Start () {
-		
+		gameManager = GameManager.Get();
 	}
 	
 	// Update is called once per frame

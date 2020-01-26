@@ -26,7 +26,7 @@ public class StartMenu : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager = GameManager.GetAudioManager();
 
         playButton.onClick.AddListener(play);
         creditsButton.onClick.AddListener(showCredits);

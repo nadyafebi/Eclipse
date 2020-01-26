@@ -3,18 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// GameManager handles game logic that involves interactions between multiple objects in the scene such as Game Over and current checkPoint location
+/// Handles the overall game logic.
 /// </summary>
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
+    /// <summary>
+    /// Refers to the instace of managers. There can only be one!
+    /// </summary>
+    private static GameManager instance;
+    private static AudioManager audioManager;
 
     public GameObject player; //The player GameObject on the scene
     private Transform SpawnPosition; //The location that the player will spawn
+
+    void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+        if (instance != this) {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+        audioManager = GetComponent<AudioManager>();
+    }
 	
-    // Use this for initialization
-	void Start () {
-        
-	}
-	
+    public static GameManager Get() {
+        return instance;
+    }
+
+    public static AudioManager GetAudioManager() {
+        return audioManager;
+    }
 
     //Updates the spawnPosition
     public void UpdateSpawnPosition(Transform newPosition)
