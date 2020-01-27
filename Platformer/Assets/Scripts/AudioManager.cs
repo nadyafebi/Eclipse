@@ -58,7 +58,10 @@ public class AudioManager : MonoBehaviour
 
     void OnNewScene(Scene current, Scene next)
     {
-        PlayBGM(next.name);
+        if (next.name[0] != current.name[0])
+        {
+            PlayBGM(next.name);
+        }
     }
 
     public IEnumerator FadeAudio(float duration)
