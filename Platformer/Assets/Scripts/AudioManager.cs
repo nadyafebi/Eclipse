@@ -34,22 +34,31 @@ public class AudioManager : MonoBehaviour
 
         // Play the first song.
         string sceneName = SceneManager.GetActiveScene().name;
+        PlayBGM(sceneName);
+    }
+
+    void PlayBGM(string sceneName)
+    {
         if (musics.ContainsKey(sceneName))
         {
             player.clip = musics[sceneName];
+            player.volume = 1.0f;
+            player.pitch = 1.0f;
             player.Play();
+        }
+        else
+        {
+            if (Char.IsNumber(sceneName[0]))
+            {
+                sceneName = sceneName[0].ToString();
+                PlayBGM(sceneName);
+            }
         }
     }
 
     void OnNewScene(Scene current, Scene next)
     {
-        if (musics.ContainsKey(next.name))
-        {
-            player.clip = musics[next.name];
-            player.volume = 1.0f;
-            player.pitch = 1.0f;
-            player.Play();
-        }
+        PlayBGM(next.name);
     }
 
     public IEnumerator FadeAudio(float duration)
