@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sky
+    uniqueID: 2701617109
+    locked: 0
   - name: Parallax
     uniqueID: 2900905439
     locked: 0
