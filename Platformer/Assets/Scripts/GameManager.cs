@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
         SpawnPosition = newPosition;
     }
 
+    public void SetPlayer(GameObject player)
+    {
+        this.player = player;
+    }
+
     //Moves the player to the SPawnPosition and Calls playerHealth Healing function
     public void GameOver()
     {
