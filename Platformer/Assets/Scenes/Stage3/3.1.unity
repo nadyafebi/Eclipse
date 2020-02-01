@@ -891,7 +891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438325024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5199943, y: -3.1083531, z: -10}
+  m_LocalPosition: {x: -6.5199904, y: -3.1083531, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68735bc1442ff743b9d2a082f8d275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: Scene3.2
+  gameSceneName: 3.2
   sunPlayer: {fileID: 1110952745}
   moonPlayer: {fileID: 2079594670}
 --- !u!61 &647418951

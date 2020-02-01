@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void Start () {
         gameManager = GameManager.Get();
+        gameManager.SetPlayer(gameObject);
         healthBar = healthBarObject.GetComponent<HealthBar>();
         playerSprite = GetComponent<SpriteRenderer>();
         characterController2D = GetComponent<CharacterController2D>();
