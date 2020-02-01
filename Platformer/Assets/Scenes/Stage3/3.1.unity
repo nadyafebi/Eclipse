@@ -997,7 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68735bc1442ff743b9d2a082f8d275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: Scene3.2
+  gameSceneName: 3.2
   sunPlayer: {fileID: 1110952745}
   moonPlayer: {fileID: 2079594670}
 --- !u!61 &647418951
