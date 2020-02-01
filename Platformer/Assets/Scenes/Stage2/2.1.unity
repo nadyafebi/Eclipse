@@ -2851,7 +2851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68735bc1442ff743b9d2a082f8d275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: Stage2Test
+  gameSceneName: 2.2
   sunPlayer: {fileID: 409669365}
   moonPlayer: {fileID: 409669365}
 --- !u!61 &767833928
