@@ -19,6 +19,8 @@ public class AudioManager : MonoBehaviour
 
     private Dictionary<string, AudioClip> musics = new Dictionary<string, AudioClip>();
 
+    private string lastScene;
+
     void Start()
     {
         player = GetComponent<AudioSource>();
@@ -31,6 +33,7 @@ public class AudioManager : MonoBehaviour
 
         // Add listener that triggers when scene changes.
         SceneManager.activeSceneChanged += OnNewScene;
+        lastScene = SceneManager.GetActiveScene().name;
 
         // Play the first song.
         string sceneName = SceneManager.GetActiveScene().name;
@@ -58,7 +61,7 @@ public class AudioManager : MonoBehaviour
 
     void OnNewScene(Scene current, Scene next)
     {
-        if (next.name[0] != current.name[0])
+        if (next.name[0] != lastScene[0])
         {
             PlayBGM(next.name);
         }
