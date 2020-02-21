@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 114062073148669802}
   - component: {fileID: 114600917398554040}
   - component: {fileID: 4177882503953305098}
+  - component: {fileID: 114629706297525250}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -250,7 +251,6 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 10
   healthBarObject: {fileID: 0}
-  gameManager: {fileID: 0}
 --- !u!95 &4177882503953305098
 Animator:
   serializedVersion: 3

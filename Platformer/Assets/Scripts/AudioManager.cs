@@ -19,6 +19,8 @@ public class AudioManager : MonoBehaviour
 
     private Dictionary<string, AudioClip> musics = new Dictionary<string, AudioClip>();
 
+    private string currentScene;
+
     void Start()
     {
         player = GetComponent<AudioSource>();
@@ -30,11 +32,11 @@ public class AudioManager : MonoBehaviour
         }
 
         // Add listener that triggers when scene changes.
-        SceneManager.activeSceneChanged += OnNewScene;
+        SceneManager.sceneLoaded += OnNewScene;
+        currentScene = SceneManager.GetActiveScene().name;
 
         // Play the first song.
-        string sceneName = SceneManager.GetActiveScene().name;
-        PlayBGM(sceneName);
+        PlayBGM(currentScene);
     }
 
     void PlayBGM(string sceneName)
@@ -42,7 +44,6 @@ public class AudioManager : MonoBehaviour
         if (musics.ContainsKey(sceneName))
         {
             player.clip = musics[sceneName];
-            player.volume = 1.0f;
             player.pitch = 1.0f;
             player.Play();
         }
@@ -56,12 +57,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void OnNewScene(Scene current, Scene next)
+    void OnNewScene(Scene next, LoadSceneMode mode)
     {
-        if (next.name[0] != current.name[0])
+        if (next.name[0] != currentScene[0])
         {
             PlayBGM(next.name);
         }
+        currentScene = next.name;
     }
 
     public IEnumerator FadeAudio(float duration)
@@ -72,6 +74,17 @@ public class AudioManager : MonoBehaviour
             player.volume -= startVolume * Time.deltaTime / duration;
             yield return null;
         }
+        player.volume = startVolume;
+    }
+
+    public float GetVolume()
+    {
+        return player.volume;
+    }
+
+    public void SetVolume(float volume)
+    {
+        player.volume = volume;
     }
 
     public void SetPitch(float pitch)
