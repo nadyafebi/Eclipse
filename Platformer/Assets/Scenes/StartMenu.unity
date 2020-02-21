@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c613778c813267d4ba2342e3abd51698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSceneName: Stage 1.1 Spawn
+  startSceneName: 1.1 Spawn
   creditSceneName: CreditScene
   playButton: {fileID: 893700043}
   creditsButton: {fileID: 1624386775}
