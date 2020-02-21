@@ -7,7 +7,6 @@ TagManager:
   - HurtBox
   - HitBox
   - block
-  - Interactable
   layers:
   - Default
   - TransparentFX

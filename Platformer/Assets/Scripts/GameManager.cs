@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Handles the overall game logic.
@@ -14,45 +13,19 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private static AudioManager audioManager;
 
-    public GameObject gameMenu;
-    private GameObject gameMenuInstance;
-    private bool gameMenuOpened;
-
     public GameObject player; //The player GameObject on the scene
-
     private Transform SpawnPosition; //The location that the player will spawn
 
-    private string currentScene;
-
-    private const string START_MENU = "StartMenu";
-
-    void Awake()
-    {
-        if (instance == null)
-        {
+    void Awake() {
+        if (instance == null) {
             instance = this;
         }
-        if (instance != this)
-        {
+        if (instance != this) {
             Destroy(gameObject);
         }
 
         DontDestroyOnLoad(gameObject);
-    }
-
-    void Start()
-    {
         audioManager = GetComponent<AudioManager>();
-        currentScene = SceneManager.GetActiveScene().name;
-        SceneManager.sceneLoaded += OnNewScene;
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && currentScene != START_MENU)
-        {
-            ToggleMenu();
-        }
     }
 	
     public static GameManager Get() {
@@ -88,31 +61,5 @@ public class GameManager : MonoBehaviour
         playerHealth.HealDamage(playerHealth.maxHealth);
         player.transform.position = SpawnPosition.position;
 
-    }
-
-    private void OnNewScene(Scene next, LoadSceneMode mode)
-    {
-        currentScene = next.name;
-    }
-
-    public void ToggleMenu()
-    {
-        if (gameMenuOpened) 
-        {
-            Time.timeScale = 0;
-            gameMenuInstance = Instantiate(gameMenu);
-        } 
-        else 
-        {
-            Time.timeScale = 1;
-            Destroy(gameMenuInstance);
-        }
-        gameMenuOpened = !gameMenuOpened;
-    }
-
-    public void GoToStartMenu()
-    {
-        SceneManager.LoadScene(START_MENU);
-        Time.timeScale = 1;
     }
 }
