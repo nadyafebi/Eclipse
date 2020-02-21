@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 114629706297525250}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,3 +282,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7d530ba9bdf4e47946e1d8227e669c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTouchingInteractable: 0

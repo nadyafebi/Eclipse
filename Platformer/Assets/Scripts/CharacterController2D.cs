@@ -43,6 +43,10 @@ public class CharacterController2D : MonoBehaviour {
         {
             OnLandEvent = new UnityEvent();
         }
+
+        // Temporary fix for jump animation. No idea wtf is going on here.
+        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 
     void FixedUpdate()
