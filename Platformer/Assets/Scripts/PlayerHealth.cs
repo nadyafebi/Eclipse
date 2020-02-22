@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public float maxHealth;
     public float currentHealth;
+    public bool immune;
     public GameObject healthBarObject; //UI Bar
     private GameManager gameManager;
     private SpriteRenderer playerSprite;
@@ -35,7 +36,7 @@ public class PlayerHealth : MonoBehaviour {
     //Deals damage to player base on specified amount and updates UI and stats
 	public void TakeDamage(float damage)
     {
-        if (!characterController2D.m_Immune)
+        if (!immune)
         {
 
             currentHealth -= damage;
@@ -65,12 +66,12 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (collision.gameObject.tag == "HurtBox" && this.gameObject.transform.position.y - collision.gameObject.transform.position.y >= 0)
         {
-            characterController2D.m_RigidBody2D.velocity = new Vector2(characterController2D.m_RigidBody2D.velocity.x, 25);
+            characterController2D.Jump(25f);
 
         }
         if (collision.gameObject.tag == "HitBox")
         {
-            if (!characterController2D.m_Immune)
+            if (!immune)
             {
                 StartCoroutine(BlinkSprite());
                 StartCoroutine(DamageState());
@@ -82,9 +83,9 @@ public class PlayerHealth : MonoBehaviour {
     IEnumerator DamageState()
     {
         TakeDamage(1);
-        characterController2D.m_Immune = true;
+        immune = true;
         yield return new WaitForSeconds(1f); //Time before they can get hit again
-        characterController2D.m_Immune = false;
+        immune = false;
 
     }
 
