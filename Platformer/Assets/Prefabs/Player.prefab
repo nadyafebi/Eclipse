@@ -89,7 +89,7 @@ MonoBehaviour:
     m_Bits: 256
   m_GroundCheck: {fileID: 4332883934352440}
   m_AirControl: 1
-  m_JumpForce: 800
+  m_JumpForce: 675
   m_AirJumps: 0
   OnJumpEvent:
     m_PersistentCalls:
@@ -160,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7d530ba9bdf4e47946e1d8227e669c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTouchingInteractable: 0
 --- !u!212 &212441263472878830
 SpriteRenderer:
   m_ObjectHideFlags: 0
