@@ -25,7 +25,7 @@ public class SwitchWorld : MonoBehaviour
     {
         audioManager = GameManager.GetAudioManager();
         m_camera = cameraControl.GetComponent<CinemachineVirtualCamera>();
-        healthBar = GameManager.Get().healthBar;
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
 
         Set(active);
     }

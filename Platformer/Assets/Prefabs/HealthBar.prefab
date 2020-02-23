@@ -85,7 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f58de40ad110d0468eaec90d3b0d11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orb: {fileID: 6343804631952202963, guid: ed81d011e72f2ad488dabd12cd102c82, type: 3}
+  orbPrefab: {fileID: 6343804631952202963, guid: ed81d011e72f2ad488dabd12cd102c82,
+    type: 3}
   blueOrbController: {fileID: 9100000, guid: 076d0ce5428b0cf42a095f2f4eb21c41, type: 2}
   redOrbController: {fileID: 9100000, guid: 9bb79c19726a54f498868797eb4154ef, type: 2}
   currentColor: 0

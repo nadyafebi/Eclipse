@@ -25,13 +25,13 @@ public class PlayerHealth : MonoBehaviour {
     {
         gameManager = GameManager.Get();
         gameManager.SetPlayer(gameObject);
-        healthBar = gameManager.healthBar;
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         playerSprite = GetComponent<SpriteRenderer>();
         characterController2D = GetComponent<CharacterController2D>();
 
         // At start of scene, player gets max health.
         currentHealth = maxHealth;
-        healthBar.Set((int)currentHealth);
+        healthBar.Set(currentHealth);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

@@ -8,33 +8,25 @@ public class HealthBar : MonoBehaviour
     [System.Serializable]
     public enum OrbColor {Blue, Red};
 
-    /// <summary>
-    /// A GameObject containing the image of the orb.
-    /// </summary>
+    [Header("Appearance")]
     [Tooltip("A GameObject containing an image of the orb.")]
-    public GameObject orb;
+    public GameObject orbPrefab;
 
-    public RuntimeAnimatorController blueOrbController;
-    public RuntimeAnimatorController redOrbController;
-
-    public OrbColor currentColor = OrbColor.Blue;
-
-    /// <summary>
-    /// Size of individual orb.
-    /// </summary>
+    [Tooltip("Size of individual orb.")]
     public float orbSize;
 
-    /// <summary>
-    /// Gap between each orbs.
-    /// </summary>
     [Tooltip("Gap between each orbs.")]
     public float orbGap;
+
+    [Header("Color")]
+    public OrbColor currentColor = OrbColor.Blue;
+    public RuntimeAnimatorController blueOrbController;
+    public RuntimeAnimatorController redOrbController;
 
     private List<GameObject> orbs = new List<GameObject>();
 
     void Start()
     {
-        GameManager.Get().healthBar = this;
         SwitchColor(currentColor);
     }
 
@@ -44,7 +36,7 @@ public class HealthBar : MonoBehaviour
     public void Add()
     {
         // Create a new orb and set it to be the bar's child.
-        GameObject newOrb = Instantiate(orb);
+        GameObject newOrb = Instantiate(orbPrefab);
         orbs.Add(newOrb);
         newOrb.transform.SetParent(transform);
 
