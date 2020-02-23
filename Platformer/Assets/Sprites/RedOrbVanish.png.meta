@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: c3dbb0c23ce657c41bf2e512aa59a2bb
+guid: d32756cb1041c4745a1f691bcf867699
 TextureImporter:
   fileIDToRecycleName:
-    21300000: BlueOrb_0
-    21300002: BlueOrb_1
-    21300004: BlueOrb_2
-    21300006: BlueOrb_3
-    21300008: BlueOrb_4
-    21300010: BlueOrb_5
-    21300012: BlueOrb_6
-    21300014: BlueOrb_7
-    21300016: BlueOrb_8
+    21300000: RedOrbVanish_0
+    21300002: RedOrbVanish_1
+    21300004: RedOrbVanish_2
+    21300006: RedOrbVanish_3
+    21300008: RedOrbVanish_4
+    21300010: RedOrbVanish_5
+    21300012: RedOrbVanish_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -104,27 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlueOrb_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 294
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c867b9a700b77eb48b1d4f2082005cde
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueOrb_1
+      name: RedOrbVanish_0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,13 +116,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff3d26d98d462a4fbda70b24ed6b8e7
+      spriteID: 34657dd68a67c064585ab91e8e22b653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_2
+      name: RedOrbVanish_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,13 +136,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50cf70fa6a22c6f49bfbae23aabd01b1
+      spriteID: a737637d9cb91e54a8dc1527dd634041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_3
+      name: RedOrbVanish_2
       rect:
         serializedVersion: 2
         x: 0
@@ -178,13 +156,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63b2429dbb9e08049a39fb8c70b83ddb
+      spriteID: 0a28ef11a48375e4195c953af16da5c2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_4
+      name: RedOrbVanish_3
       rect:
         serializedVersion: 2
         x: 0
@@ -198,13 +176,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41a662b3d9e5dc44dadb6fabe44a14a5
+      spriteID: 8f255d605dfd24a45bedd64892afbc3a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_5
+      name: RedOrbVanish_4
       rect:
         serializedVersion: 2
         x: 0
@@ -218,13 +196,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1642874683bf69442a1a2f539a103a77
+      spriteID: d6af2eb965920c44eadfd0c9fe42c94d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_6
+      name: RedOrbVanish_5
       rect:
         serializedVersion: 2
         x: 0
@@ -238,13 +216,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 365f04acd9a357d4a8f01461b6dd7f8d
+      spriteID: 1822ccb155c7c3344a063307c44883de
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_7
+      name: RedOrbVanish_6
       rect:
         serializedVersion: 2
         x: 0
@@ -258,7 +236,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a2e1d81d93f5dc4e8cc0181e9374c64
+      spriteID: fa06f2b8923c1fa4e9835416fb13f816
       vertices: []
       indices: 
       edges: []
@@ -266,7 +244,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 837e07bc6a47a4643a0657a46c39c785
+    spriteID: d44fc50779ad4f745855f967ba8c4b2a
     vertices: []
     indices: 
     edges: []

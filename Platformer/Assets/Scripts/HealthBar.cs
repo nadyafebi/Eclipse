@@ -5,11 +5,19 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    [System.Serializable]
+    public enum OrbColor {Blue, Red};
+
     /// <summary>
     /// A GameObject containing the image of the orb.
     /// </summary>
     [Tooltip("A GameObject containing an image of the orb.")]
     public GameObject orb;
+
+    public RuntimeAnimatorController blueOrbController;
+    public RuntimeAnimatorController redOrbController;
+
+    public OrbColor currentColor = OrbColor.Blue;
 
     /// <summary>
     /// Size of individual orb.
@@ -24,9 +32,10 @@ public class HealthBar : MonoBehaviour
 
     private List<GameObject> orbs = new List<GameObject>();
 
-    void Awake()
+    void Start()
     {
         GameManager.Get().healthBar = this;
+        SwitchColor(currentColor);
     }
 
     /// <summary>
@@ -42,6 +51,9 @@ public class HealthBar : MonoBehaviour
         // Set the position of the orb depending on how many orbs we have.
         float x = orbSize * orbs.Count + orbGap * (orbs.Count - 1);
         ((RectTransform)newOrb.transform).anchoredPosition = new Vector2(x, 0);
+
+        // Set the color of the orb.
+        SetColor(newOrb, currentColor);
     }
 
     /// <summary>
@@ -76,6 +88,31 @@ public class HealthBar : MonoBehaviour
             for (int i = 0; i < diff; i++)
             {
                 Remove();
+            }
+        }
+    }
+
+    public void SetColor(GameObject orb, OrbColor color)
+    {
+        Animator animator = orb.GetComponent<Animator>();
+        if (color == OrbColor.Blue)
+        {
+            animator.runtimeAnimatorController = blueOrbController;
+        }
+        else if (color == OrbColor.Red)
+        {
+            animator.runtimeAnimatorController = redOrbController;
+        }
+    }
+
+    public void SwitchColor(OrbColor color)
+    {
+        if (color != currentColor)
+        {
+            currentColor = color;
+            foreach (var orb in orbs)
+            {
+                SetColor(orb, color);
             }
         }
     }

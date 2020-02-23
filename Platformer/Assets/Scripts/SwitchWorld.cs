@@ -19,11 +19,13 @@ public class SwitchWorld : MonoBehaviour
     private CinemachineVirtualCamera m_camera;
 
     private AudioManager audioManager;
+    private HealthBar healthBar;
 
     void Start()
     {
         audioManager = GameManager.GetAudioManager();
         m_camera = cameraControl.GetComponent<CinemachineVirtualCamera>();
+        healthBar = GameManager.Get().healthBar;
 
         Set(active);
     }
@@ -57,6 +59,7 @@ public class SwitchWorld : MonoBehaviour
             sunWorld.SetActive(false);
             moonWorld.SetActive(true);
             m_camera.Follow = moonPlayer.transform;
+            healthBar.SwitchColor(HealthBar.OrbColor.Blue);
 
             if (audioManager)
             {
@@ -68,6 +71,7 @@ public class SwitchWorld : MonoBehaviour
             moonWorld.SetActive(false);
             sunWorld.SetActive(true);
             m_camera.Follow = sunPlayer.transform;
+            healthBar.SwitchColor(HealthBar.OrbColor.Red);
 
             if (audioManager)
             {
