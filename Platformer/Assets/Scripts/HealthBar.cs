@@ -24,6 +24,10 @@ public class HealthBar : MonoBehaviour
 
     private List<GameObject> orbs = new List<GameObject>();
 
+    void Awake()
+    {
+        GameManager.Get().healthBar = this;
+    }
 
     /// <summary>
     /// Adds an orb to the health bar.
@@ -50,8 +54,7 @@ public class HealthBar : MonoBehaviour
             int last = orbs.Count - 1;
             GameObject lastOrb = orbs[last];
             orbs.RemoveAt(last);
-            lastOrb.GetComponent<Animator>().SetBool("Vanish", true);
-            Destroy(lastOrb, 1.5f);
+            StartCoroutine(Remove(lastOrb));
         }
     }
 
@@ -75,5 +78,12 @@ public class HealthBar : MonoBehaviour
                 Remove();
             }
         }
+    }
+
+    private IEnumerator Remove(GameObject orb)
+    {
+        orb.GetComponent<Animator>().SetBool("Vanish", true);
+        yield return new WaitForSeconds(1f);
+        Destroy(orb);
     }
 }

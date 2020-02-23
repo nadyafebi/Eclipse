@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     private Transform SpawnPosition; //The location that the player will spawn
 
+    // UI-related members.
+    [HideInInspector()] public HealthBar healthBar;
+
     private string currentScene;
 
     private const string START_MENU = "StartMenu";
