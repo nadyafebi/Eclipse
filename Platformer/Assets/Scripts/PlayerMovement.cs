@@ -46,10 +46,12 @@ public class PlayerMovement : MonoBehaviour {
     public void OnJumping()
     {
         animator.SetBool("Jump", true);
+        animator.SetBool("Fall", false);
     }
 
     public void OnFalling()
     {
+        animator.SetBool("Jump", false);
         animator.SetBool("Fall", true);
     }
 
