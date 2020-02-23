@@ -43,8 +43,14 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetBool("Jump", true);
     }
 
+    public void OnFalling()
+    {
+        animator.SetBool("Fall", true);
+    }
+
     public void OnLanding()
     {
         animator.SetBool("Jump", false);
+        animator.SetBool("Fall", false);
     }
 }

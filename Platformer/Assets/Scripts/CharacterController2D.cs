@@ -21,9 +21,11 @@ public class CharacterController2D : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent OnJumpEvent;
+    public UnityEvent OnFallEvent;
     public UnityEvent OnLandEvent;
 
     private bool m_Grounded;
+    private float m_speedY;
     private bool m_FacingRight = true;
     private int m_AirJumpsLeft;
     private Vector2 m_Velocity = Vector2.zero;
@@ -47,6 +49,16 @@ public class CharacterController2D : MonoBehaviour
                 OnLandEvent.Invoke();
             }
         }
+    }
+
+    void LateUpdate()
+    {
+        float speedY = m_RigidBody2D.velocity.y;
+        if (m_speedY >= 0 && speedY < 0)
+        {
+            OnFallEvent.Invoke();
+        }
+        m_speedY = speedY;
     }
 
     /// <summary>
