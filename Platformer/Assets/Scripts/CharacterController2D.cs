@@ -22,6 +22,7 @@ public class CharacterController2D : MonoBehaviour
     [Header("Swimming")]
     [SerializeField] private float m_UnderwaterGravity = 1f;
     [SerializeField] private float m_UnderwaterDrag = 10f;
+    [SerializeField] private float m_SwimAngle = 45f;
 
     [Header("Events")]
     public UnityEvent OnJumpEvent;
@@ -77,6 +78,7 @@ public class CharacterController2D : MonoBehaviour
             m_Underwater = true;
             m_RigidBody2D.gravityScale = m_UnderwaterGravity;
             m_RigidBody2D.drag = m_UnderwaterDrag;
+            RotateOnSwim();
             OnSwimStartEvent.Invoke();
         }
     }
@@ -88,6 +90,7 @@ public class CharacterController2D : MonoBehaviour
             m_Underwater = false;
             m_RigidBody2D.gravityScale = m_NormalGravity;
             m_RigidBody2D.drag = 0;
+            transform.eulerAngles = Vector3.zero;
             OnSwimEndEvent.Invoke();
         }
     }
@@ -147,5 +150,14 @@ public class CharacterController2D : MonoBehaviour
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+        if (m_Underwater)
+        {
+            RotateOnSwim();
+        }
+    }
+
+    public void RotateOnSwim()
+    {
+        transform.eulerAngles = new Vector3(0, 0, (m_FacingRight ? -1 : 1) * m_SwimAngle);
     }
 }

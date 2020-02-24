@@ -60,4 +60,14 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetBool("Jump", false);
         animator.SetBool("Fall", false);
     }
+
+    public void OnSwimStart()
+    {
+        animator.SetBool("Swim", true);
+    }
+
+    public void OnSwimEnd()
+    {
+        animator.SetBool("Swim", false);
+    }
 }
