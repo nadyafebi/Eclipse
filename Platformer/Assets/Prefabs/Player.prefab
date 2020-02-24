@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114421021764413650}
   - component: {fileID: 114062073148669802}
   - component: {fileID: 114600917398554040}
+  - component: {fileID: 114776359206543704}
   - component: {fileID: 114629706297525250}
   - component: {fileID: 212441263472878830}
   - component: {fileID: 61088015899895214}
@@ -91,6 +92,8 @@ MonoBehaviour:
   m_AirControl: 1
   m_JumpForce: 800
   m_AirJumps: 0
+  m_UnderwaterGravity: 1
+  m_UnderwaterDrag: 10
   OnJumpEvent:
     m_PersistentCalls:
       m_Calls:
@@ -133,6 +136,34 @@ MonoBehaviour:
           m_StringArgument: OnLanding
           m_BoolArgument: 0
         m_CallState: 2
+  OnSwimStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114776359206543704}
+        m_MethodName: SwimStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSwimEndEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114776359206543704}
+        m_MethodName: SwimEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &114062073148669802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +193,20 @@ MonoBehaviour:
   immune: 0
   maxHealth: 3
   currentHealth: 3
+--- !u!114 &114776359206543704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888215179190616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27ef3c1aa6d8f54cb7766e571b8e023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOxygen: 10
+  currentOxygen: 0
 --- !u!114 &114629706297525250
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,12 +19,20 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float m_JumpForce = 800f;
     [SerializeField] public int m_AirJumps = 0;
 
+    [Header("Swimming")]
+    [SerializeField] private float m_UnderwaterGravity = 1f;
+    [SerializeField] private float m_UnderwaterDrag = 10f;
+
     [Header("Events")]
     public UnityEvent OnJumpEvent;
     public UnityEvent OnFallEvent;
     public UnityEvent OnLandEvent;
+    public UnityEvent OnSwimStartEvent;
+    public UnityEvent OnSwimEndEvent;
 
     private bool m_Grounded;
+    private bool m_Underwater;
+    private float m_NormalGravity;
     private float m_speedY;
     private bool m_FacingRight = true;
     private int m_AirJumpsLeft;
@@ -35,6 +43,7 @@ public class CharacterController2D : MonoBehaviour
     void Awake()
     {
         m_RigidBody2D = GetComponent<Rigidbody2D>();
+        m_NormalGravity = m_RigidBody2D.gravityScale;
     }
 
     void Update()
@@ -61,6 +70,28 @@ public class CharacterController2D : MonoBehaviour
         m_speedY = speedY;
     }
 
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Water") && !m_Underwater)
+        {
+            m_Underwater = true;
+            m_RigidBody2D.gravityScale = m_UnderwaterGravity;
+            m_RigidBody2D.drag = m_UnderwaterDrag;
+            OnSwimStartEvent.Invoke();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Water") && m_Underwater)
+        {
+            m_Underwater = false;
+            m_RigidBody2D.gravityScale = m_NormalGravity;
+            m_RigidBody2D.drag = 0;
+            OnSwimEndEvent.Invoke();
+        }
+    }
+
     /// <summary>
     /// Moves the character left or right and if they should jump or not.
     /// </summary>
@@ -79,7 +110,7 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        if (m_Grounded && jump)
+        if ((m_Grounded || m_Underwater) && jump)
         {
             Jump(m_JumpForce);
         }
