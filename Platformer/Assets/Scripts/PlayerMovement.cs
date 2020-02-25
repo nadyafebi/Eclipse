@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the movement of the player by reading user input
+/// and using CharacterController2D.
+/// </summary>
 public class PlayerMovement : MonoBehaviour {
-    /// <summary>
-    /// PlayeMovement handles the movement of the player by specifying player speed, reading user Input,
-    /// and calling CharacterController2D to move the Player Object  
-    /// </summary>
-    
-    [SerializeField] private float runSpeed;
-    float horizontalMove = 0f;
-    bool jump = false;
-    public CharacterController2D controller;
+    public bool movable = true;
 
+    [SerializeField] private float runSpeed;
+    
+    private float horizontalMove = 0f;
+    private bool jump = false;
+
+    private CharacterController2D controller;
     private Animator animator;
 
     void Start()
@@ -21,29 +23,51 @@ public class PlayerMovement : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        if (Input.GetButtonDown("Jump"))
+        if (movable)
         {
-            jump = true;
-            animator.SetBool("Jump", true);
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+            }
         }
     }
 
-    // FixedUpdate is called multiple times per x amount of frames
     private void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
     }
-    public float pushPower = 2.0F;
+
+    public void OnJumping()
+    {
+        animator.SetBool("Jump", true);
+        animator.SetBool("Fall", false);
+    }
+
+    public void OnFalling()
+    {
+        animator.SetBool("Jump", false);
+        animator.SetBool("Fall", true);
+    }
 
     public void OnLanding()
     {
         animator.SetBool("Jump", false);
+        animator.SetBool("Fall", false);
+    }
+
+    public void OnSwimStart()
+    {
+        animator.SetBool("Swim", true);
+    }
+
+    public void OnSwimEnd()
+    {
+        animator.SetBool("Swim", false);
     }
 }

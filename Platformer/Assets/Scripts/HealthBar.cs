@@ -5,25 +5,30 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    /// <summary>
-    /// A GameObject containing the image of the orb.
-    /// </summary>
-    [Tooltip("A GameObject containing an image of the orb.")]
-    public GameObject orb;
+    [System.Serializable]
+    public enum OrbColor {Blue, Red};
 
-    /// <summary>
-    /// Size of individual orb.
-    /// </summary>
+    [Header("Appearance")]
+    [Tooltip("A GameObject containing an image of the orb.")]
+    public GameObject orbPrefab;
+
+    [Tooltip("Size of individual orb.")]
     public float orbSize;
 
-    /// <summary>
-    /// Gap between each orbs.
-    /// </summary>
     [Tooltip("Gap between each orbs.")]
     public float orbGap;
 
+    [Header("Color")]
+    public OrbColor currentColor = OrbColor.Blue;
+    public RuntimeAnimatorController blueOrbController;
+    public RuntimeAnimatorController redOrbController;
+
     private List<GameObject> orbs = new List<GameObject>();
 
+    void Start()
+    {
+        SwitchColor(currentColor);
+    }
 
     /// <summary>
     /// Adds an orb to the health bar.
@@ -31,13 +36,16 @@ public class HealthBar : MonoBehaviour
     public void Add()
     {
         // Create a new orb and set it to be the bar's child.
-        GameObject newOrb = Instantiate(orb);
+        GameObject newOrb = Instantiate(orbPrefab);
         orbs.Add(newOrb);
         newOrb.transform.SetParent(transform);
 
         // Set the position of the orb depending on how many orbs we have.
         float x = orbSize * orbs.Count + orbGap * (orbs.Count - 1);
         ((RectTransform)newOrb.transform).anchoredPosition = new Vector2(x, 0);
+
+        // Set the color of the orb.
+        SetColor(newOrb, currentColor);
     }
 
     /// <summary>
@@ -50,8 +58,7 @@ public class HealthBar : MonoBehaviour
             int last = orbs.Count - 1;
             GameObject lastOrb = orbs[last];
             orbs.RemoveAt(last);
-            lastOrb.GetComponent<Animator>().SetBool("Vanish", true);
-            Destroy(lastOrb, 1.5f);
+            StartCoroutine(Remove(lastOrb));
         }
     }
 
@@ -75,5 +82,37 @@ public class HealthBar : MonoBehaviour
                 Remove();
             }
         }
+    }
+
+    public void SetColor(GameObject orb, OrbColor color)
+    {
+        Animator animator = orb.GetComponent<Animator>();
+        if (color == OrbColor.Blue)
+        {
+            animator.runtimeAnimatorController = blueOrbController;
+        }
+        else if (color == OrbColor.Red)
+        {
+            animator.runtimeAnimatorController = redOrbController;
+        }
+    }
+
+    public void SwitchColor(OrbColor color)
+    {
+        if (color != currentColor)
+        {
+            currentColor = color;
+            foreach (var orb in orbs)
+            {
+                SetColor(orb, color);
+            }
+        }
+    }
+
+    private IEnumerator Remove(GameObject orb)
+    {
+        orb.GetComponent<Animator>().SetBool("Vanish", true);
+        yield return new WaitForSeconds(1f);
+        Destroy(orb);
     }
 }

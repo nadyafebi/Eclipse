@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BlueOrb
+  m_Name: RedOrb
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Vanish
@@ -60,7 +60,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BlueOrbVanish
+  m_Name: RedOrbVanish
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -73,7 +73,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a41b9a7c25813ea4c8d8fb04bfd49db0, type: 2}
+  m_Motion: {fileID: 7400000, guid: b0e4c77ccf2546a478f77c0bb7bdd4dd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -86,7 +86,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BlueOrb
+  m_Name: RedOrb
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -100,7 +100,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e3f77b35557d66a439366c3d382ce71f, type: 2}
+  m_Motion: {fileID: 7400000, guid: e41616b258e299542a7a2babb4b71c44, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

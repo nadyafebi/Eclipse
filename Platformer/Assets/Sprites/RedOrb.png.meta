@@ -1,16 +1,15 @@
 fileFormatVersion: 2
-guid: c3dbb0c23ce657c41bf2e512aa59a2bb
+guid: f3b21329c3f34d348a93fd659f784269
 TextureImporter:
   fileIDToRecycleName:
-    21300000: BlueOrb_0
-    21300002: BlueOrb_1
-    21300004: BlueOrb_2
-    21300006: BlueOrb_3
-    21300008: BlueOrb_4
-    21300010: BlueOrb_5
-    21300012: BlueOrb_6
-    21300014: BlueOrb_7
-    21300016: BlueOrb_8
+    21300000: RedOrb_0
+    21300002: RedOrb_1
+    21300004: RedOrb_2
+    21300006: RedOrb_3
+    21300008: RedOrb_4
+    21300010: RedOrb_5
+    21300012: RedOrb_6
+    21300014: RedOrb_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -104,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlueOrb_0
+      name: RedOrb_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,13 +117,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c867b9a700b77eb48b1d4f2082005cde
+      spriteID: 335437814951879428e31e99bd7cd1a1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_1
+      name: RedOrb_1
       rect:
         serializedVersion: 2
         x: 0
@@ -138,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff3d26d98d462a4fbda70b24ed6b8e7
+      spriteID: 67330e3ec077a894d882f9738652dd14
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_2
+      name: RedOrb_2
       rect:
         serializedVersion: 2
         x: 0
@@ -158,13 +157,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50cf70fa6a22c6f49bfbae23aabd01b1
+      spriteID: 18b9fbe88c733884181a3473f96cd8a2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_3
+      name: RedOrb_3
       rect:
         serializedVersion: 2
         x: 0
@@ -178,13 +177,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63b2429dbb9e08049a39fb8c70b83ddb
+      spriteID: 1bc9f26c25f6a4b49bf7d1a91f4cb5a6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_4
+      name: RedOrb_4
       rect:
         serializedVersion: 2
         x: 0
@@ -198,13 +197,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41a662b3d9e5dc44dadb6fabe44a14a5
+      spriteID: dfb68255ab0c2f94c9e7577e86abb366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_5
+      name: RedOrb_5
       rect:
         serializedVersion: 2
         x: 0
@@ -218,13 +217,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1642874683bf69442a1a2f539a103a77
+      spriteID: b56e99f10f3ba8f4687fc6ec533d8442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_6
+      name: RedOrb_6
       rect:
         serializedVersion: 2
         x: 0
@@ -238,13 +237,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 365f04acd9a357d4a8f01461b6dd7f8d
+      spriteID: 184c0d048a1b0f448af4f541f3f61f86
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueOrb_7
+      name: RedOrb_7
       rect:
         serializedVersion: 2
         x: 0
@@ -258,7 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a2e1d81d93f5dc4e8cc0181e9374c64
+      spriteID: 597c5b67ff7d6f344a2bc6e35d379006
       vertices: []
       indices: 
       edges: []
@@ -266,7 +265,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 837e07bc6a47a4643a0657a46c39c785
+    spriteID: c38f3928772d1274c96593b87f2ccab7
     vertices: []
     indices: 
     edges: []

@@ -3,92 +3,102 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; //Needed to create Image instances
 
+/// <summary>
+/// Handles the life of the player by:
+/// - Specifing health amount and keeping track of current health.
+/// - Getting access to the UI HealthBar element and updating it based on health.
+/// - Contains methods to damage the player.
+/// - Handles when the player gets hurt.
+/// </summary>
 public class PlayerHealth : MonoBehaviour {
+    public bool immune;
+    public int maxHealth;
+    public int currentHealth;
 
-    /// <summary>
-    /// PlayerHealth handles the life of the Player by:
-    /// -Specifing health amount and keeping track of current Health
-    /// -Getting access to the UI healthBar element and updating it base on health
-    /// -Contains methods that damage the player
-    /// -Handles when the playaer gets hurt
-    /// </summary>
-
-    public float maxHealth;
-    public float currentHealth;
-    public GameObject healthBarObject; //UI Bar
-    private GameManager gameManager;
     private SpriteRenderer playerSprite;
-    private CharacterController2D characterController2D;
     private HealthBar healthBar;
 
-    void Start () {
+    private GameManager gameManager;
+    private CharacterController2D characterController2D;
+
+    void Start()
+    {
         gameManager = GameManager.Get();
         gameManager.SetPlayer(gameObject);
-        healthBar = healthBarObject.GetComponent<HealthBar>();
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         playerSprite = GetComponent<SpriteRenderer>();
         characterController2D = GetComponent<CharacterController2D>();
 
-        currentHealth = maxHealth; //At start of scene, player gets max health
-        healthBar.Set((int)currentHealth);
-    }
-	
-    //Deals damage to player base on specified amount and updates UI and stats
-	public void TakeDamage(float damage)
-    {
-        if (!characterController2D.m_Immune)
-        {
-
-            currentHealth -= damage;
-            // float health = currentHealth / maxHealth;
-            healthBar.Set((int)currentHealth);
-            if(currentHealth <= 0)      //If health goes to 0 or below, call GameOver in GameManager
-            {
-                gameManager.GameOver();
-            }
-        }
-
+        // At start of scene, player gets max health.
+        currentHealth = maxHealth;
+        healthBar.Set(currentHealth);
     }
 
-    //Heals Damage to the player base on specified amount and updates the UI
-    public void HealDamage(float healAmount)
-    {
-        currentHealth += healAmount;
-        if (currentHealth > maxHealth) //If health goes above max health then cap it at max health
-            currentHealth = maxHealth;
-
-        // float health = currentHealth / maxHealth;
-        healthBar.Set((int)currentHealth);
-    }
-
-    //ONTriggerEnter2D is called when another trigger collider hits any of the player's colliders
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "HurtBox" && this.gameObject.transform.position.y - collision.gameObject.transform.position.y >= 0)
         {
-            characterController2D.m_RigidBody2D.velocity = new Vector2(characterController2D.m_RigidBody2D.velocity.x, 25);
-
+            characterController2D.Jump(25f);
         }
+        
         if (collision.gameObject.tag == "HitBox")
         {
-            if (!characterController2D.m_Immune)
+            if (!immune)
             {
                 StartCoroutine(BlinkSprite());
                 StartCoroutine(DamageState());
             }
         }
     }
+	
+    /// <summary>
+    /// Deals damage to the player based on the specified amount and updates the UI.
+    /// </summary>
+    /// <param name="damage">Damage to be taken by the player.</param>
+	public void TakeDamage(int damage)
+    {
+        if (!immune)
+        {
+            currentHealth -= damage;
+            healthBar.Set(currentHealth);
 
-    //Calls Take Damage, and makes Player Immune for a short interval before they can get hit again
+            if(currentHealth <= 0)
+            {
+                gameManager.GameOver();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Heals the player based on the specified amount and updates the UI.
+    /// </summary>
+    /// <param name="healAmount">Amount of health to be added to the player.</param>
+    public void HealDamage(int healAmount)
+    {
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        healthBar.Set(currentHealth);
+    }
+
+    /// <summary>
+    /// Calls `TakeDamage` and makes player immune for a short interval before they can get hit again.
+    /// </summary>
     IEnumerator DamageState()
     {
         TakeDamage(1);
-        characterController2D.m_Immune = true;
+        immune = true;
         yield return new WaitForSeconds(1f); //Time before they can get hit again
-        characterController2D.m_Immune = false;
+        immune = false;
 
     }
 
-    //Makes the player's sprite blink
+    /// <summary>
+    /// Makes the player's sprite blink.
+    /// </summary>
     IEnumerator BlinkSprite()
     {
         for (int i = 0; i < 8; ++i)

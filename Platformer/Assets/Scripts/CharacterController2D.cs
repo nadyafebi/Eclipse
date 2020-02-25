@@ -3,49 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterController2D : MonoBehaviour {
+/// <summary>
+/// Handles the core logic of character movement.
+/// </summary>
+public class CharacterController2D : MonoBehaviour
+{
+    [Header("Movement")]
+    [SerializeField] private float m_MovementMultiplier = 10f;
+    [SerializeField][Range(0, .3f)] private float m_MovementSmoothing = .05f;
+    [SerializeField] private LayerMask m_GroundLayer = 0;
+    [SerializeField] private Transform m_GroundCheck = null;
 
-    /// <summary>
-    /// CharacterController2D handles the core logic of the player's:
-    /// -States such as: grounded, immune, air jumps lefts, and facing right.
-    /// -Properties such as: how many air jumps, jump power, gravity force, movement, and air control
-    /// 
-    /// CharacterController2D is often getting called by other scripts that want to gather/modify information from the player(Ex: PlayerMovement) 
-    /// </summary>
-    
+    [Header("Jumping")]
+    [SerializeField] private bool m_AirControl = false;
     [SerializeField] private float m_JumpForce = 800f;
     [SerializeField] public int m_AirJumps = 0;
-    [SerializeField] private float m_FallGravity = 4f;
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
-    [SerializeField] private LayerMask m_GroundLayer;
-    [SerializeField] private Transform m_GroundCheck;
-    [SerializeField] private bool m_AirControl = false;
-    [SerializeField] private float m_JumpForceOnEnemies = 20;
+
+    [Header("Swimming")]
+    [SerializeField] private float m_UnderwaterGravity = 1f;
+    [SerializeField] private float m_UnderwaterDrag = 10f;
+    [SerializeField] private float m_SwimAngle = 45f;
+
+    [Header("Events")]
+    public UnityEvent OnJumpEvent;
+    public UnityEvent OnFallEvent;
+    public UnityEvent OnLandEvent;
+    public UnityEvent OnSwimStartEvent;
+    public UnityEvent OnSwimEndEvent;
 
     private bool m_Grounded;
-    public bool m_FacingRight = true;
-    public bool m_Damaged;
-    public bool m_Immune = false;
+    private bool m_Underwater;
+    private float m_NormalGravity;
+    private float m_speedY;
+    private bool m_FacingRight = true;
     private int m_AirJumpsLeft;
-    private Vector3 m_Velocity = Vector3.zero;
+    private Vector2 m_Velocity = Vector2.zero;
 
-    public UnityEvent OnLandEvent;
-
-    [HideInInspector] public Rigidbody2D m_RigidBody2D;
-    //private Animator animator; //If using animations
+    private Rigidbody2D m_RigidBody2D;
 
     void Awake()
     {
         m_RigidBody2D = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>(); //get animator component
-
-        if (OnLandEvent == null)
-        {
-            OnLandEvent = new UnityEvent();
-        }
+        m_NormalGravity = m_RigidBody2D.gravityScale;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         bool wasGrounded = m_Grounded;
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
@@ -59,81 +61,103 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private void Update()
+    void LateUpdate()
     {
-      
+        float speedY = m_RigidBody2D.velocity.y;
+        if (m_speedY >= 0 && speedY < 0)
+        {
+            OnFallEvent.Invoke();
+        }
+        m_speedY = speedY;
     }
 
-    //Handles the player movement and their jumping, called in PlayerMovement.cs
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Water") && !m_Underwater)
+        {
+            m_Underwater = true;
+            m_RigidBody2D.gravityScale = m_UnderwaterGravity;
+            m_RigidBody2D.drag = m_UnderwaterDrag;
+            RotateOnSwim();
+            OnSwimStartEvent.Invoke();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Water") && m_Underwater)
+        {
+            m_Underwater = false;
+            m_RigidBody2D.gravityScale = m_NormalGravity;
+            m_RigidBody2D.drag = 0;
+            transform.eulerAngles = Vector3.zero;
+            OnSwimEndEvent.Invoke();
+        }
+    }
+
+    /// <summary>
+    /// Moves the character left or right and if they should jump or not.
+    /// </summary>
+    /// <param name="move">The movement distance. If negative, the character moves to the left.</param>
+    /// <param name="jump">Whether the character should jump or not.</param>
     public void Move(float move, bool jump)
     {
-
         if (m_Grounded || m_AirControl)
         {
-            Vector3 targetVelocity = new Vector2(move * 10f, m_RigidBody2D.velocity.y);
+            Vector2 targetVelocity = new Vector2(move * m_MovementMultiplier, m_RigidBody2D.velocity.y);
+            m_RigidBody2D.velocity = Vector2.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-            m_RigidBody2D.velocity = Vector3.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-            if (move > 0 && !m_FacingRight)
+            if ((move > 0 && !m_FacingRight) || (move < 0 && m_FacingRight))
+            {
                 Flip();
-            
-            else if (move < 0 && m_FacingRight)
-                Flip();
-            
+            }
         }
 
-        JumpGravity(jump);
-
-        if (m_Grounded && jump)
+        if ((m_Grounded || m_Underwater) && jump)
         {
-            m_Grounded = false;
-            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+            Jump(m_JumpForce);
         }
-
-        //Air Jump
         else if (jump && m_AirJumpsLeft > 0)
         {
-            m_Grounded = false;
-            m_RigidBody2D.AddForce(new Vector2(0f, m_JumpForce));
+            Jump(m_JumpForce);
             m_AirJumpsLeft--;
         }
     }
 
-    //Enhances the Jump by adding gravity when falling, short hop, and full hop
-    void JumpGravity(bool jump)
+    /// <summary>
+    /// Makes the character jump.
+    /// </summary>
+    /// <param name="jumpForce">The force to be applied for the jump.</param>
+    public void Jump(float jumpForce)
     {
-        if (jump && m_AirJumpsLeft >= 1)
-            m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0); //resets gravity if player jumps in the air so we the momentum doesnt kill the jump force
- 
-        if (m_RigidBody2D.velocity.y < 0) //we are falling, therefore increase gravity down
-            m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
-        
-        else if (m_RigidBody2D.velocity.y > 0  && !Input.GetButton("Jump"))//Tab Jump
-            m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime; 
+        m_Grounded = false;
+        m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, jumpForce));
+        OnJumpEvent.Invoke();
+
+        // Resets gravity for the next jump so it doesn't kill the jump force.
+        if (m_AirJumpsLeft > 0)
+        {
+            m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
+        }
     }
 
-    //Turns around the gameObject attach to this script
-    void Flip()
+    /// <summary>
+    /// Flips the character's sprite from whichever direction they are currently facing.
+    /// </summary>
+    public void Flip()
     {
         m_FacingRight = !m_FacingRight;
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
-    }
-
-    void OnTriggerEnter2D(Collider2D collide)
-    {
-        if (collide.gameObject.tag == "hurtbox" && this.gameObject.transform.position.y - collide.gameObject.transform.position.y >= 0)
+        if (m_Underwater)
         {
-            m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForceOnEnemies);
+            RotateOnSwim();
         }
-
     }
 
-    //Used by other scripts to check Character status
-    public bool IsGrounded()
+    public void RotateOnSwim()
     {
-        return m_Grounded;
+        transform.eulerAngles = new Vector3(0, 0, (m_FacingRight ? -1 : 1) * m_SwimAngle);
     }
-
 }

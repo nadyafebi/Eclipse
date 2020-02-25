@@ -7,6 +7,8 @@ TagManager:
   - HurtBox
   - HitBox
   - block
+  - Interactable
+  - Water
   layers:
   - Default
   - TransparentFX

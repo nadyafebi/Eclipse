@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles player interaction with interactables.
+/// </summary>
 public class PlayerInteraction : MonoBehaviour
 {
-    public bool isTouchingInteractable = false;
+    private bool isTouchingInteractable = false;
     private GameObject interactable;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isTouchingInteractable)
+        if (Input.GetButtonDown("Interact") && isTouchingInteractable)
         {
             interactable.GetComponent<Interactable>().Interact();
         }
