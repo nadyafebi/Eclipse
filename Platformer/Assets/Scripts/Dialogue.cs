@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class Dialogue : MonoBehaviour
 {
@@ -11,8 +12,11 @@ public class Dialogue : MonoBehaviour
     private int index;
     public float typingSpeed;
 
+    public UnityEvent dialogueDone;
+
     public GameObject continueButton;
     public GameObject background;
+    public GameObject name;
     private void Start()
     {
         StartCoroutine(Type());
@@ -48,6 +52,9 @@ public class Dialogue : MonoBehaviour
             textDisplay.text = "";
             continueButton.SetActive(false);
             background.SetActive(false);
+            name.SetActive(false);
+            dialogueDone.Invoke();
         }
     }
+
 }

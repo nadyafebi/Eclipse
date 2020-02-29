@@ -7,7 +7,13 @@ public class DisplayDialogue : MonoBehaviour
 
     public GameObject sunPlayer;
     public GameObject moonPlayer;
-    public GameObject dialogue;
+    public GameObject dialogueObject;
+    private Dialogue dialogue;
+    private bool triggered = false;
+    private void Start()
+    {
+        dialogue = dialogueObject.GetComponent<Dialogue>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -15,7 +21,17 @@ public class DisplayDialogue : MonoBehaviour
         if (GetComponent<BoxCollider2D>().IsTouching(moonPlayer.GetComponent<Collider2D>())
             || GetComponent<BoxCollider2D>().IsTouching(sunPlayer.GetComponent<Collider2D>()))
         {
-            dialogue.SetActive(true);
+            if (!triggered)
+            {
+                sunPlayer.GetComponent<PlayerMovement>().movable = false;
+                dialogueObject.SetActive(true);
+                triggered = true;
+            }
         }
+    }
+
+    public void makeMovable()
+    {
+        sunPlayer.GetComponent<PlayerMovement>().movable = true;
     }
 }
