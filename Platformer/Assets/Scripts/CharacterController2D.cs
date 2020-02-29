@@ -54,10 +54,7 @@ public class CharacterController2D : MonoBehaviour
         if (m_Grounded)
         {
             m_AirJumpsLeft = m_AirJumps;
-            if (!wasGrounded)
-            {
-                OnLandEvent.Invoke();
-            }
+            OnLandEvent.Invoke();
         }
     }
 
