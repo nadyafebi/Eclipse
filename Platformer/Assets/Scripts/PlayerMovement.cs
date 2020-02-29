@@ -7,9 +7,24 @@ using UnityEngine;
 /// and using CharacterController2D.
 /// </summary>
 public class PlayerMovement : MonoBehaviour {
-    public bool movable = true;
+    private bool m_movable = true;
+    public bool movable
+    {
+        get { return m_movable; }
+        set
+        {
+            m_movable = value;
+            horizontalMove = 0;
+            if (animator)
+            {
+                animator.SetFloat("Speed", 0);
+            }
+            jump = false;
+        }
+    }
 
     [SerializeField] private float runSpeed;
+
     
     private float horizontalMove = 0f;
     private bool jump = false;
@@ -25,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
-        if (movable)
+        if (m_movable)
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
