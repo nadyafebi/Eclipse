@@ -7,6 +7,8 @@ public class GameMenu : MonoBehaviour
 {
     public Slider volumeSlider;
 
+    public Button firstButton;
+
     private GameManager gameManager;
     private AudioManager audioManager;
 
@@ -16,11 +18,18 @@ public class GameMenu : MonoBehaviour
         audioManager = GameManager.GetAudioManager();
 
         volumeSlider.value = audioManager.GetVolume();
+
+        firstButton.Select();
     }
 
     public void GoToStartMenu()
     {
         gameManager.GoToStartMenu();
+    }
+
+    public void ResumeGame()
+    {
+        gameManager.ToggleMenu();
     }
 
     public void VolumeSliderChanged()
