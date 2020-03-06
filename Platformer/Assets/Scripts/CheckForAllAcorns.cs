@@ -14,6 +14,7 @@ public class CheckForAllAcorns : MonoBehaviour
     private int initialChildCount;
     private int currentChildCount;
     public GameObject moveLocation;
+    public Vector3 spawnLoc;
     private bool isSet = false;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class CheckForAllAcorns : MonoBehaviour
     {
         initialChildCount = parentAcorn.transform.childCount;
         currentChildCount = initialChildCount;
+        spawnLoc = player.transform.position;
         updateTextForChildren();
         
     }
@@ -40,7 +42,12 @@ public class CheckForAllAcorns : MonoBehaviour
 
             //illTree.SetActive(false);
             dialogueArea.SetActive(true);
-            player.transform.position = moveLocation.transform.position;
+            if (!isSet)
+            {
+                player.transform.position = spawnLoc;
+                isSet = true;
+
+            }
             nextArea.SetActive(true);
         }
     }

@@ -7,6 +7,7 @@ using UnityEngine;
 /// and using CharacterController2D.
 /// </summary>
 public class PlayerMovement : MonoBehaviour {
+    [SerializeField]
     private bool m_movable = true;
     public bool movable
     {

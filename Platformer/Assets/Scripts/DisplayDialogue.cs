@@ -33,5 +33,6 @@ public class DisplayDialogue : MonoBehaviour
     public void makeMovable()
     {
         sunPlayer.GetComponent<PlayerMovement>().movable = true;
+        moonPlayer.GetComponent<PlayerMovement>().movable = true;
     }
 }
