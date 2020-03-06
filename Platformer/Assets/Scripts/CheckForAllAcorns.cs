@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CheckForAllAcorns : MonoBehaviour
 {
     public GameObject parentAcorn;
-    public GameObject illTree;
-    public GameObject healthyTree;
+    public GameObject player;
+    public GameObject dialogueArea;
     public GameObject nextArea;
     public Text countText;
     private int initialChildCount;
     private int currentChildCount;
+    public GameObject moveLocation;
+    private bool isSet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class CheckForAllAcorns : MonoBehaviour
         initialChildCount = parentAcorn.transform.childCount;
         currentChildCount = initialChildCount;
         updateTextForChildren();
+        
     }
 
     // Update is called once per frame
@@ -33,8 +37,10 @@ public class CheckForAllAcorns : MonoBehaviour
         }
         if (activeChildren == 0)
         {
-            illTree.SetActive(false);
-            healthyTree.SetActive(true);
+
+            //illTree.SetActive(false);
+            dialogueArea.SetActive(true);
+            player.transform.position = moveLocation.transform.position;
             nextArea.SetActive(true);
         }
     }
