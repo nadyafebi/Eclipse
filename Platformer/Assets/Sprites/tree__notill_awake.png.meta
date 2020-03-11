@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: a9b29043511495d4e97b647060db169b
+guid: 9cdf54289c4e2ee43b8c3fef13ecd413
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Eclipse_Luna_Death_1-Sheet_0
-    21300002: Eclipse_Luna_Death_1-Sheet_1
-    21300004: Eclipse_Luna_Death_1-Sheet_2
-    21300006: Eclipse_Luna_Death_1-Sheet_3
-    21300008: Eclipse_Luna_Death_1-Sheet_4
-    21300010: Eclipse_Luna_Death_1-Sheet_5
-    21300012: Eclipse_Luna_Death_1-Sheet_6
-    21300014: Eclipse_Luna_Death_1-Sheet_7
+    21300000: tree__notill_awake_0
+    21300002: tree__notill_awake_1
+    21300004: tree__notill_awake_2
+    21300006: tree__notill_awake_3
+    21300008: tree__notill_awake_4
+    21300010: tree__notill_awake_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -92,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_0
+      name: tree__notill_awake_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 16
-        width: 24
-        height: 31
+        x: 11
+        y: 0
+        width: 105
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,19 +104,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3190cf1ef81b16c429831ebcb1262dc1
+      spriteID: a051a30dd469b9b4c8c5f5fe9f4089e2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_1
+      name: tree__notill_awake_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 16
-        width: 24
-        height: 31
+        x: 128
+        y: 0
+        width: 105
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c499d456c1a92754d9e4b76304c39100
+      spriteID: fcdc50f396e59c04498ed8dfa10af483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_2
+      name: tree__notill_awake_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 16
-        width: 24
-        height: 31
+        x: 245
+        y: 0
+        width: 105
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 086b844d89305824fa91a8089300f064
+      spriteID: 6cbd8e3fac3c12142b2a4a814c893f7c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_3
+      name: tree__notill_awake_3
       rect:
         serializedVersion: 2
-        x: 212
-        y: 16
-        width: 24
-        height: 31
+        x: 362
+        y: 0
+        width: 105
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddc859aa741032448bb536aa73dbafdc
+      spriteID: 586e3a85aa3190948ba5abe862fe0755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_4
+      name: tree__notill_awake_4
       rect:
         serializedVersion: 2
-        x: 276
-        y: 16
-        width: 24
-        height: 31
+        x: 479
+        y: 0
+        width: 105
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,19 +184,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d554c10fa6efd1b41a85de099f6e50ae
+      spriteID: ca218a7d24e954c429ff34dd15f98b4a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_5
+      name: tree__notill_awake_5
       rect:
         serializedVersion: 2
-        x: 338
-        y: 14
-        width: 26
-        height: 35
+        x: 590
+        y: 0
+        width: 105
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,47 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0178b6577f547d648b9103c8ead4da3d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 397
-        y: 11
-        width: 41
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4d5d1ae87ffa47469f5e049f2e4acea
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eclipse_Luna_Death_1-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 455
-        y: 1
-        width: 313
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8716d1b2d0d3fd043b269b117841766e
+      spriteID: d6616023f0a2a114ca9a6e4bde940694
       vertices: []
       indices: 
       edges: []
@@ -254,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f365c3f1518269f498b5ae26b264868d
+    spriteID: 7e62c0214f98654448bfc7b4c8ff4bb2
     vertices: []
     indices: 
     edges: []
