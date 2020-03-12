@@ -38,11 +38,11 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+        audioManager = GetComponent<AudioManager>();
     }
 
     void Start()
     {
-        audioManager = GetComponent<AudioManager>();
         currentScene = SceneManager.GetActiveScene().name;
         SceneManager.sceneLoaded += OnNewScene;
     }

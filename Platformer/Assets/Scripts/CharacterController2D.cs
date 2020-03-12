@@ -24,6 +24,10 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float m_UnderwaterDrag = 10f;
     [SerializeField] private float m_SwimAngle = 45f;
 
+    [Header("Sound Effects")]
+    public AudioClip jumpSound;
+    public AudioClip airJumpSound;
+
     [Header("Events")]
     public UnityEvent OnJumpEvent;
     public UnityEvent OnFallEvent;
@@ -40,11 +44,13 @@ public class CharacterController2D : MonoBehaviour
     private Vector2 m_Velocity = Vector2.zero;
 
     private Rigidbody2D m_RigidBody2D;
+    private AudioManager audioManager;
 
     void Awake()
     {
         m_RigidBody2D = GetComponent<Rigidbody2D>();
         m_NormalGravity = m_RigidBody2D.gravityScale;
+        audioManager = GameManager.GetAudioManager();
     }
 
     void Update()
@@ -112,10 +118,12 @@ public class CharacterController2D : MonoBehaviour
 
         if ((m_Grounded || m_Underwater) && jump)
         {
+            audioManager.PlaySFX(jumpSound);
             Jump(m_JumpForce);
         }
         else if (jump && m_AirJumpsLeft > 0)
         {
+            audioManager.PlaySFX(airJumpSound);
             Jump(m_JumpForce);
             m_AirJumpsLeft--;
         }

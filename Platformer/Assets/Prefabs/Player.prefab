@@ -95,6 +95,8 @@ MonoBehaviour:
   m_UnderwaterGravity: 1
   m_UnderwaterDrag: 10
   m_SwimAngle: 45
+  jumpSound: {fileID: 8300000, guid: d810cdc52939e094299af6298d9ad203, type: 3}
+  airJumpSound: {fileID: 8300000, guid: 3df9ad6c3e76384469e2f460185ad18d, type: 3}
   OnJumpEvent:
     m_PersistentCalls:
       m_Calls:
