@@ -7,13 +7,23 @@ using UnityEngine;
 /// </summary>
 public class PlayerInteraction : MonoBehaviour
 {
+    public AudioClip interactSound;
+
     private bool isTouchingInteractable = false;
     private GameObject interactable;
+
+    private AudioManager audioManager;
+
+    void Start()
+    {
+        audioManager = GameManager.GetAudioManager();
+    }
 
     void Update()
     {
         if (Input.GetButtonDown("Interact") && isTouchingInteractable)
         {
+            audioManager.PlaySFX(interactSound);
             interactable.GetComponent<Interactable>().Interact();
         }
     }

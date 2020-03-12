@@ -39,6 +39,11 @@ public class AudioManager : MonoBehaviour
         PlayBGM(currentScene);
     }
 
+    public void PlaySFX(AudioClip clip)
+    {
+        player.PlayOneShot(clip);
+    }
+
     void PlayBGM(string sceneName)
     {
         if (musics.ContainsKey(sceneName))
