@@ -10,6 +10,10 @@ TextureImporter:
     21300010: Eclipse_Luna_Death_1-Sheet_5
     21300012: Eclipse_Luna_Death_1-Sheet_6
     21300014: Eclipse_Luna_Death_1-Sheet_7
+    21300016: Eclipse_Luna_Death_1-Sheet_8
+    21300018: Eclipse_Luna_Death_1-Sheet_9
+    21300020: Eclipse_Luna_Death_1-Sheet_10
+    21300022: Eclipse_Luna_Death_1-Sheet_11
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -95,10 +99,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 16
-        width: 24
-        height: 31
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,7 +110,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3190cf1ef81b16c429831ebcb1262dc1
+      spriteID: 81ac2faca8a8b7247962b5a480379678
       vertices: []
       indices: 
       edges: []
@@ -115,10 +119,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 16
-        width: 24
-        height: 31
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,7 +130,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c499d456c1a92754d9e4b76304c39100
+      spriteID: c4fe6223ef0004648ab73f3da23aa15f
       vertices: []
       indices: 
       edges: []
@@ -135,10 +139,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 16
-        width: 24
-        height: 31
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,7 +150,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 086b844d89305824fa91a8089300f064
+      spriteID: e61a7dee5cc5fe04fa0007c816caed05
       vertices: []
       indices: 
       edges: []
@@ -155,10 +159,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_3
       rect:
         serializedVersion: 2
-        x: 212
-        y: 16
-        width: 24
-        height: 31
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,7 +170,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddc859aa741032448bb536aa73dbafdc
+      spriteID: 7b479df50ae974649a74616aac946492
       vertices: []
       indices: 
       edges: []
@@ -175,10 +179,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_4
       rect:
         serializedVersion: 2
-        x: 276
-        y: 16
-        width: 24
-        height: 31
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,7 +190,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d554c10fa6efd1b41a85de099f6e50ae
+      spriteID: 4a431bc3e7ed12e49ab7c3d821f72626
       vertices: []
       indices: 
       edges: []
@@ -195,10 +199,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_5
       rect:
         serializedVersion: 2
-        x: 338
-        y: 14
-        width: 26
-        height: 35
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,7 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0178b6577f547d648b9103c8ead4da3d
+      spriteID: 136f1b3d5f7e6b54086dab391792c8aa
       vertices: []
       indices: 
       edges: []
@@ -215,10 +219,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_6
       rect:
         serializedVersion: 2
-        x: 397
-        y: 11
-        width: 41
-        height: 44
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,7 +230,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4d5d1ae87ffa47469f5e049f2e4acea
+      spriteID: 0b811687959436e42a8a783211eec804
       vertices: []
       indices: 
       edges: []
@@ -235,10 +239,10 @@ TextureImporter:
       name: Eclipse_Luna_Death_1-Sheet_7
       rect:
         serializedVersion: 2
-        x: 455
-        y: 1
-        width: 313
-        height: 63
+        x: 448
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,7 +250,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8716d1b2d0d3fd043b269b117841766e
+      spriteID: 6eeefcf034c7d514fa91d3b0a00d8e96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclipse_Luna_Death_1-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9387923fa086e04594c1ba76734d109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclipse_Luna_Death_1-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48764fe89ab6c648b508c4c3991c677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclipse_Luna_Death_1-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628513c07aa1ae7418cbf3e597cde928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclipse_Luna_Death_1-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3c7d70f30bdb14daa67802be1b9a40
       vertices: []
       indices: 
       edges: []

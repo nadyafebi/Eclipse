@@ -1,19 +1,18 @@
 fileFormatVersion: 2
-guid: f920c8d61e7c4a645ba44b398f313db2
+guid: ec800ca517a7e9843a4440a487e6ba5b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Eclipse_Sol_Death_1-Sheet_0
-    21300002: Eclipse_Sol_Death_1-Sheet_1
-    21300004: Eclipse_Sol_Death_1-Sheet_2
-    21300006: Eclipse_Sol_Death_1-Sheet_3
-    21300008: Eclipse_Sol_Death_1-Sheet_4
-    21300010: Eclipse_Sol_Death_1-Sheet_5
-    21300012: Eclipse_Sol_Death_1-Sheet_6
-    21300014: Eclipse_Sol_Death_1-Sheet_7
-    21300016: Eclipse_Sol_Death_1-Sheet_8
-    21300018: Eclipse_Sol_Death_1-Sheet_9
-    21300020: Eclipse_Sol_Death_1-Sheet_10
-    21300022: Eclipse_Sol_Death_1-Sheet_11
+    21300000: Bubble_Flow_and_Pop_0
+    21300002: Bubble_Flow_and_Pop_1
+    21300004: Bubble_Flow_and_Pop_2
+    21300006: Bubble_Flow_and_Pop_3
+    21300008: Bubble_Flow_and_Pop_4
+    21300010: Bubble_Flow_and_Pop_5
+    21300012: Bubble_Flow_and_Pop_6
+    21300014: Bubble_Flow_and_Pop_7
+    21300016: Bubble_Flow_and_Pop_8
+    21300018: Bubble_Flow_and_Pop_9
+    21300020: Bubble_Flow_and_Pop_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -96,241 +95,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_0
+      name: Bubble_Flow_and_Pop_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 7
+        y: 148
+        width: 43
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db05671a23146d64cb3add9d0fea96cb
+      spriteID: 159ea7b69252b3f45b1035c8d26fb0b3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_1
+      name: Bubble_Flow_and_Pop_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 58
+        y: 156
+        width: 51
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ac9e0bdc85e12b4aa9254802b2c79ea
+      spriteID: b05d99c15142f4b428bf4208c7a370a5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_2
+      name: Bubble_Flow_and_Pop_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 116
+        y: 152
+        width: 34
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69876b54538550849abc95c888844824
+      spriteID: 7495e80db25723e48bd4004a144ae529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_3
+      name: Bubble_Flow_and_Pop_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 163
+        y: 151
+        width: 39
+        height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fdaeaee33d919f44bc80e75967db280
+      spriteID: c108216005cddb348a6c0bd44bcadaec
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_4
+      name: Bubble_Flow_and_Pop_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 232
+        y: 82
+        width: 49
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4968756, y: 0.46349266}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5d36eeb0fc11ed40894630fd6bc0084
+      spriteID: 74230e5065da74847a921f067a9785fe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_5
+      name: Bubble_Flow_and_Pop_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 5
+        y: 84
+        width: 43
+        height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96cc0deffdab7c641939d66f85905665
+      spriteID: 5203626704927af4195df4e62d3dc168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_6
+      name: Bubble_Flow_and_Pop_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 63
+        y: 89
+        width: 42
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebc26933dbeeb91448e98373ff8612da
+      spriteID: 25c6000fa0e15d5409f7f6622f600d41
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_7
+      name: Bubble_Flow_and_Pop_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 120
+        y: 86
+        width: 42
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c08e6c017d823d4bbaf47ea326a41c7
+      spriteID: a38c60c311e699440a53b5c8217b81bf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_8
+      name: Bubble_Flow_and_Pop_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 315
+        y: 79
+        width: 57
+        height: 54
+      alignment: 9
+      pivot: {x: 0.49621728, y: 0.4680919}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a854035b7a1d6343a2016cd3936f397
+      spriteID: d0a52a5cd88439943b849409f2998312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_9
+      name: Bubble_Flow_and_Pop_10
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
+        x: 178
+        y: 88
+        width: 40
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c69e3095d035504d91446d5c06103e7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f788fc4e6ed40514299b0130fe5358a2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eclipse_Sol_Death_1-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74e5be03f588eb1418e518526e9f1ea5
+      spriteID: 702947f1cf0288b47a66dcdaf5bc2bb1
       vertices: []
       indices: 
       edges: []
@@ -338,7 +297,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 23f94f5238127704d9349ef4c88aea73
+    spriteID: ea5d03d3f8a87f246a45f665525fd78b
     vertices: []
     indices: 
     edges: []
