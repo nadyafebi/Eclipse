@@ -869,7 +869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135305399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5199943, y: -3.1083531, z: -10}
+  m_LocalPosition: {x: -6.519996, y: -3.1083531, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -909,23 +909,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4e93f6e2df5e3428564876d4a9f49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 800
-  m_AirJumps: 0
-  m_FallGravity: 4
+  m_MovementMultiplier: 10
   m_MovementSmoothing: 0.05
   m_GroundLayer:
     serializedVersion: 2
     m_Bits: 0
   m_GroundCheck: {fileID: 2030630407}
   m_AirControl: 0
-  m_JumpForceOnEnemies: 20
-  m_FacingRight: 1
-  m_Damaged: 0
-  m_Immune: 0
+  m_JumpForce: 800
+  m_AirJumps: 0
+  m_UnderwaterGravity: 1
+  m_UnderwaterDrag: 10
+  m_SwimAngle: 45
+  jumpSound: {fileID: 0}
+  airJumpSound: {fileID: 0}
+  OnJumpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFallEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_RigidBody2D: {fileID: 0}
+  OnSwimStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSwimEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &157932202
 Rigidbody2D:
   serializedVersion: 4
@@ -17779,6 +17791,7 @@ MonoBehaviour:
   moonWorld: {fileID: 2016930937}
   sunPlayer: {fileID: 1762373318}
   moonPlayer: {fileID: 2030630408}
+  shadow: {fileID: 4146359236922083771, guid: e3bfc4f398d804645b9694442cd31146, type: 3}
   cameraControl: {fileID: 1594419652}
 --- !u!4 &1743890826
 Transform:
