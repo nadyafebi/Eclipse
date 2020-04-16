@@ -14,8 +14,10 @@ public class SwitchWorld : MonoBehaviour
     public GameObject moonWorld;
     public GameObject sunPlayer;
     public GameObject moonPlayer;
+    public GameObject shadow;
     public GameObject cameraControl;
 
+    private GameObject shadowInstance;
     private CinemachineVirtualCamera m_camera;
 
     private AudioManager audioManager;
@@ -60,6 +62,7 @@ public class SwitchWorld : MonoBehaviour
             moonWorld.SetActive(true);
             m_camera.Follow = moonPlayer.transform;
             healthBar.SwitchColor(HealthBar.OrbColor.Blue);
+            SetShadow(sunPlayer);
 
             if (audioManager)
             {
@@ -72,11 +75,25 @@ public class SwitchWorld : MonoBehaviour
             sunWorld.SetActive(true);
             m_camera.Follow = sunPlayer.transform;
             healthBar.SwitchColor(HealthBar.OrbColor.Red);
+            SetShadow(moonPlayer);
 
             if (audioManager)
             {
                 audioManager.SetPitch(1.25f);
             }
         }
+    }
+
+    private void SetShadow(GameObject player)
+    {
+        if (shadowInstance)
+        {
+            Destroy(shadowInstance);
+        }
+
+        shadowInstance = Instantiate(shadow, player.transform.position, player.transform.rotation);
+        SpriteRenderer playerRenderer = player.GetComponent<SpriteRenderer>();
+        SpriteRenderer shadowRenderer = shadowInstance.GetComponent<SpriteRenderer>();
+        shadowRenderer.sprite = playerRenderer.sprite;
     }
 }
