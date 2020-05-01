@@ -57,11 +57,11 @@ public class CheckForAllAcorns : MonoBehaviour
         int collected = initialChildCount - currentChildCount;
         if (collected < 10)
         {
-            countText.text = "Acorns Collected: 0" + collected.ToString() + "/" + initialChildCount.ToString();
+            countText.text = "0" + collected.ToString() + "/" + initialChildCount.ToString();
         }
         else
         {
-            countText.text = "Acorns Collected: " + collected.ToString() + "/" + initialChildCount.ToString();
+            countText.text = "" + collected.ToString() + "/" + initialChildCount.ToString();
         }
     }
 }
