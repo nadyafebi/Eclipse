@@ -1805,6 +1805,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 1447613156743467016, guid: 7b3791d56c913c14482cb46d74846bbe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1447613156743467013, guid: 7b3791d56c913c14482cb46d74846bbe,
         type: 3}
       propertyPath: m_LocalPosition.x
