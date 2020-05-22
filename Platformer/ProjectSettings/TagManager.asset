@@ -9,6 +9,7 @@ TagManager:
   - block
   - Interactable
   - Water
+  - Bubble
   layers:
   - Default
   - TransparentFX
