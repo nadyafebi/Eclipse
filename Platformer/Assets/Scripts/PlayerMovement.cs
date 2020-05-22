@@ -27,8 +27,10 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float runSpeed;
 
     
-    private float horizontalMove = 0f;
+    public float horizontalMove = 0f;
+    public float verticalMove = 0f;
     private bool jump = false;
+    private bool swimming = false;
 
     private CharacterController2D controller;
     private Animator animator;
@@ -44,6 +46,7 @@ public class PlayerMovement : MonoBehaviour {
         if (m_movable)
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            verticalMove = Input.GetAxisRaw("Vertical");
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
             if (Input.GetButtonDown("Jump"))
@@ -55,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump, verticalMove, swimming);
         jump = false;
     }
 
@@ -79,11 +82,13 @@ public class PlayerMovement : MonoBehaviour {
 
     public void OnSwimStart()
     {
+        swimming = true;
         animator.SetBool("Swim", true);
     }
 
     public void OnSwimEnd()
     {
+        swimming = false;
         animator.SetBool("Swim", false);
     }
 }

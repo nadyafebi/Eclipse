@@ -103,14 +103,14 @@ public class CharacterController2D : MonoBehaviour
     /// </summary>
     /// <param name="move">The movement distance. If negative, the character moves to the left.</param>
     /// <param name="jump">Whether the character should jump or not.</param>
-    public void Move(float move, bool jump)
+    public void Move(float hMove, bool jump, float vMove = 0, bool swimming = false)
     {
         if (m_Grounded || m_AirControl)
         {
-            Vector2 targetVelocity = new Vector2(move * m_MovementMultiplier, m_RigidBody2D.velocity.y);
+            Vector2 targetVelocity = new Vector2(hMove * m_MovementMultiplier, swimming ? vMove * m_MovementMultiplier : m_RigidBody2D.velocity.y);
             m_RigidBody2D.velocity = Vector2.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-            if ((move > 0 && !m_FacingRight) || (move < 0 && m_FacingRight))
+            if ((hMove > 0 && !m_FacingRight) || (hMove < 0 && m_FacingRight))
             {
                 Flip();
             }
