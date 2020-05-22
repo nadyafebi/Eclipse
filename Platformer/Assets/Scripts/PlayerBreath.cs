@@ -24,6 +24,15 @@ public class PlayerBreath : MonoBehaviour
         currentOxygen = maxOxygen;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bubble"))
+        {
+            currentOxygen = maxOxygen;
+            Destroy(collision.gameObject);
+        }
+    }
+
     public void SwimStart()
     {
         swimming = true;
