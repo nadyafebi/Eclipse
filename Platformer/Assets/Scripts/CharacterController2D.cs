@@ -55,7 +55,6 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
-        bool wasGrounded = m_Grounded;
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
         if (m_Grounded)
         {

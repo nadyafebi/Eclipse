@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     /// Refers to the instace of managers. There can only be one!
     /// </summary>
     private static GameManager instance;
-    private static AudioManager audioManager;
 
     public GameObject gameMenu;
     private GameObject gameMenuInstance;
@@ -38,7 +37,6 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        audioManager = GetComponent<AudioManager>();
     }
 
     void Start()
@@ -55,12 +53,19 @@ public class GameManager : MonoBehaviour
         }
     }
 	
-    public static GameManager Get() {
+    public static GameManager Get()
+    {
         return instance;
     }
 
-    public static AudioManager GetAudioManager() {
-        return audioManager;
+    public static AudioManager GetAudioManager()
+    {
+        return Get().GetAudio();
+    }
+
+    private AudioManager GetAudio()
+    {
+        return GetComponent<AudioManager>();
     }
 
     //Updates the spawnPosition
