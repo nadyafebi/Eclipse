@@ -32,6 +32,12 @@ public class GameMenu : MonoBehaviour
         gameManager.ToggleMenu();
     }
 
+    public void RestartGame()
+    {
+        gameManager.RestartScene();
+        ResumeGame();
+    }
+
     public void VolumeSliderChanged()
     {
         float volume = volumeSlider.value;

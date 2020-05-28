@@ -83,11 +83,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-        StartCoroutine(RestartGame(playerHealth));
+        StartCoroutine(RespawnPlayer(playerHealth));
     }
 
     //Restarts Players health and position with a .5 second delay
-    IEnumerator RestartGame(PlayerHealth playerHealth)
+    IEnumerator RespawnPlayer(PlayerHealth playerHealth)
     {
         yield return new WaitForSeconds(.1f);
         playerHealth.HealDamage(playerHealth.maxHealth);
@@ -119,5 +119,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(START_MENU);
         Time.timeScale = 1;
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
