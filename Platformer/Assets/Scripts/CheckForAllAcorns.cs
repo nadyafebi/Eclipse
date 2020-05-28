@@ -10,6 +10,8 @@ public class CheckForAllAcorns : MonoBehaviour
     public GameObject player;
     public GameObject dialogueArea;
     public GameObject nextArea;
+    public GameObject illTree;
+    public GameObject goldenAcorn;
     public Text countText;
     private int initialChildCount;
     private int currentChildCount;
@@ -40,7 +42,8 @@ public class CheckForAllAcorns : MonoBehaviour
         if (activeChildren == 0)
         {
 
-            //illTree.SetActive(false);
+            illTree.SetActive(true);
+	    goldenAcorn.SetActive(true);
             dialogueArea.SetActive(true);
             if (!isSet)
             {
