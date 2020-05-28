@@ -16,7 +16,7 @@ public class Dialogue : MonoBehaviour
 
     public GameObject continueButton;
     public GameObject background;
-    public GameObject name;
+    public GameObject dialogueName;
     private void Start()
     {
         StartCoroutine(Type());
@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
             textDisplay.text = "";
             continueButton.SetActive(false);
             background.SetActive(false);
-            name.SetActive(false);
+            dialogueName.SetActive(false);
             dialogueDone.Invoke();
         }
     }

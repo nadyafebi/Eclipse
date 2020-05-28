@@ -8,11 +8,11 @@ public class DisplayDialogue : MonoBehaviour
     public GameObject sunPlayer;
     public GameObject moonPlayer;
     public GameObject dialogueObject;
-    private Dialogue dialogue;
+    // private Dialogue dialogue;
     private bool triggered = false;
     private void Start()
     {
-        dialogue = dialogueObject.GetComponent<Dialogue>();
+        // dialogue = dialogueObject.GetComponent<Dialogue>();
     }
 
     // Update is called once per frame

@@ -7,13 +7,13 @@ public class DoubleJumpScene : MonoBehaviour
     public GameObject player;
 
     private CharacterController2D controller;
-    private PlayerMovement playerMovement;
+    // private PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = player.GetComponent<CharacterController2D>();
-	playerMovement = player.GetComponent<PlayerMovement>();
+	    // playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
