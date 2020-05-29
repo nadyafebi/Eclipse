@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Dialogue : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Dialogue : MonoBehaviour
 
     public GameObject continueButton;
     public GameObject background;
+
+    [FormerlySerializedAs("name")]
     public GameObject dialogueName;
     private void Start()
     {
