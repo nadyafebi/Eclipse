@@ -52,13 +52,10 @@ public class AudioManager : MonoBehaviour
             player.pitch = 1.0f;
             player.Play();
         }
-        else
+        else if (Char.IsNumber(sceneName[0]))
         {
-            if (Char.IsNumber(sceneName[0]))
-            {
-                sceneName = sceneName[0].ToString();
-                PlayBGM(sceneName);
-            }
+            sceneName = sceneName[0].ToString();
+            PlayBGM(sceneName);
         }
     }
 
