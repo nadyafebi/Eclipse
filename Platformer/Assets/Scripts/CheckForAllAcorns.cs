@@ -43,6 +43,7 @@ public class CheckForAllAcorns : MonoBehaviour
         {
 
             illTree.SetActive(true);
+	    nextArea.SetActive(true);
 	    goldenAcorn.SetActive(true);
             dialogueArea.SetActive(true);
             if (!isSet)
@@ -51,7 +52,7 @@ public class CheckForAllAcorns : MonoBehaviour
                 isSet = true;
 
             }
-            nextArea.SetActive(true);
+            
         }
     }
 

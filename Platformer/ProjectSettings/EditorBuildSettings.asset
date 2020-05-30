@@ -12,20 +12,32 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage1/1.1 Spawn.unity
     guid: 87b6d1618ec543e49a47860db479025b
   - enabled: 1
+    path: Assets/Scenes/Stage1/1.2 Tree.unity
+    guid: 11d4770035c2f964097e9c137bb2e1b4
+  - enabled: 1
     path: Assets/Scenes/Stage1/1.2.5 Tutorial.unity
     guid: 9754f6f3104c90b498495afc432443c2
   - enabled: 1
     path: Assets/Scenes/Stage1/1.3 Acorn Collecting.unity
     guid: 65845a8accdd4ee49b3ed0b05498ae5e
   - enabled: 1
-    path: Assets/Scenes/Stage1/1.4 Transition.unity
-    guid: 02cd534129bf76d428339a785edb95d9
-  - enabled: 1
     path: Assets/Scenes/Stage2/2.1.unity
     guid: 73ff989d3e1f8eb46a0342a783c9418d
   - enabled: 1
     path: Assets/Scenes/Stage2/2.2.unity
     guid: 92de9701bf36956439bfb55ecdcf0f9d
+  - enabled: 1
+    path: Assets/Scenes/Stage1/1.4 Transition.unity
+    guid: 02cd534129bf76d428339a785edb95d9
+  - enabled: 1
+    path: Assets/Scenes/Stage4/4.1.unity
+    guid: 032e3517118cc644b8d2ed8c7aa5be31
+  - enabled: 1
+    path: Assets/Scenes/Stage4/4.2.unity
+    guid: 1edb23d34cc6008449b5a924b0aa24b8
+  - enabled: 1
+    path: Assets/Scenes/Stage4/4.3.unity
+    guid: 64c24bf3b6490ea4081b6ebd1c96adc9
   - enabled: 1
     path: Assets/Scenes/Stage3/3.1.unity
     guid: ec8ede2cc20e086499828175286f6e18
@@ -35,6 +47,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage3/3.3.unity
     guid: c0885909fc30ec745bd0499f4ce72fc2
+  - enabled: 1
+    path: Assets/Scenes/Stage3/3.4 Shrine.unity
+    guid: bbbbc19e202423f4b91d28b22b11ffb7
+  - enabled: 1
+    path: Assets/Scenes/Stage3/3.5.unity
+    guid: 37d08c6f1acc3744085b55e2d705f104
   - enabled: 1
     path: Assets/Scenes/CreditScene.unity
     guid: b4a17138a9154b841a09bf07c204bde1
@@ -56,13 +74,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending/FourEndings/EndingIdle.unity
     guid: d99a8bdde9e3e994691a2a931f98117b
-  - enabled: 1
-    path: Assets/Scenes/Stage4/4.1.unity
-    guid: 032e3517118cc644b8d2ed8c7aa5be31
-  - enabled: 1
-    path: Assets/Scenes/Stage4/4.2.unity
-    guid: 1edb23d34cc6008449b5a924b0aa24b8
-  - enabled: 1
-    path: Assets/Scenes/Stage4/4.3.unity
-    guid: 64c24bf3b6490ea4081b6ebd1c96adc9
   m_configObjects: {}
