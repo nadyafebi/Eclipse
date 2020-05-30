@@ -24,6 +24,7 @@ public class DisplayDialogue : MonoBehaviour
             if (!triggered)
             {
                 sunPlayer.GetComponent<PlayerMovement>().movable = false;
+		moonPlayer.GetComponent<PlayerMovement>().movable = false;
                 dialogueObject.SetActive(true);
                 triggered = true;
             }
