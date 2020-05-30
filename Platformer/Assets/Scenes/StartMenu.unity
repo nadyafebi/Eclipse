@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c613778c813267d4ba2342e3abd51698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSceneName: 1.1 Spawn
+  startSceneName: Intro
   creditSceneName: CreditScene
   playButton: {fileID: 893700043}
   creditsButton: {fileID: 1624386775}
@@ -5876,6 +5876,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620774119592826226, guid: 43fc97dbc1f0cad43813e198874d8a73,
+        type: 3}
+      propertyPath: stageMusics.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620774119592826226, guid: 43fc97dbc1f0cad43813e198874d8a73,
+        type: 3}
+      propertyPath: stageMusics.Array.data[10].name
+      value: Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620774119592826226, guid: 43fc97dbc1f0cad43813e198874d8a73,
+        type: 3}
+      propertyPath: stageMusics.Array.data[10].clip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43fc97dbc1f0cad43813e198874d8a73, type: 3}
