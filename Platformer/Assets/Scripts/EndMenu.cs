@@ -47,7 +47,7 @@ public class EndMenu : MonoBehaviour
     /// </summary>
     void Luna()
     {
-        StartCoroutine(Luna(3.0f));
+        StartCoroutine(Luna(1.0f));
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class EndMenu : MonoBehaviour
     /// </summary>
     void Sol()
     {
-        StartCoroutine(Sol(3.0f));
+        StartCoroutine(Sol(1.0f));
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ public class EndMenu : MonoBehaviour
     /// </summary>
     void Both()
     {
-        StartCoroutine(Both(3.0f));
+        StartCoroutine(Both(1.0f));
     }
 
     IEnumerator Luna(float fadeOutDuration)

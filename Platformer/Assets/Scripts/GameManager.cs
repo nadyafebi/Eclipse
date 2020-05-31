@@ -123,6 +123,14 @@ public class GameManager : MonoBehaviour
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        string name = SceneManager.GetActiveScene().name;
+        if (name.StartsWith("Ending"))
+        {
+            SceneManager.LoadScene("ChooseEnding");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

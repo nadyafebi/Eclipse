@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
     private string currentScene;
 
-    void Start()
+    void Awake()
     {
         player = GetComponent<AudioSource>();
 
@@ -39,9 +39,9 @@ public class AudioManager : MonoBehaviour
         PlayBGM(currentScene);
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float volumeScale = 1f)
     {
-        player.PlayOneShot(clip);
+        player.PlayOneShot(clip, volumeScale);
     }
 
     void PlayBGM(string sceneName)
@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
 
     void OnNewScene(Scene next, LoadSceneMode mode)
     {
-        if (next.name[0] != currentScene[0])
+        if (next.name[0] != currentScene[0] || musics.ContainsKey(next.name))
         {
             PlayBGM(next.name);
         }
