@@ -3445,6 +3445,11 @@ PrefabInstance:
       propertyPath: healthBarObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114421021764413650, guid: 5039a551e8afdea41b5b04561da1d70a,
+        type: 3}
+      propertyPath: m_AirJumps
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 212441263472878830, guid: 5039a551e8afdea41b5b04561da1d70a,
         type: 3}
       propertyPath: m_Sprite
@@ -3456,11 +3461,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: dfc871273087e9e4586f806ffd42aca6, type: 2}
-    - target: {fileID: 114421021764413650, guid: 5039a551e8afdea41b5b04561da1d70a,
-        type: 3}
-      propertyPath: m_AirJumps
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5039a551e8afdea41b5b04561da1d70a, type: 3}
 --- !u!1 &772694397 stripped
@@ -3573,7 +3573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925999195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.1, y: -3.9, z: 0}
+  m_LocalPosition: {x: -75.1, y: -4.3, z: 0}
   m_LocalScale: {x: 3.9312098, y: 6.0805397, z: 1}
   m_Children: []
   m_Father: {fileID: 725177451}
@@ -7998,7 +7998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407548408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -74, y: -7.4, z: -10}
+  m_LocalPosition: {x: -73.40486, y: -7.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18019,7 +18019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793962179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -56.3, y: -3.9, z: 0}
+  m_LocalPosition: {x: -56.24, y: -4.07, z: 0}
   m_LocalScale: {x: 4.11593, y: 6.2708097, z: 1}
   m_Children: []
   m_Father: {fileID: 725177451}

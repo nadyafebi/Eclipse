@@ -2298,7 +2298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614317798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.519996, y: -3.1083531, z: -10}
+  m_LocalPosition: {x: -6.520003, y: -3.1083531, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2874,7 +2874,7 @@ TextMesh:
   m_FontSize: 50
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: c17dbafca7738294484b8b73d31a564a, type: 3}
+  m_Font: {fileID: 12800000, guid: d433bf458cb9fbc49940acb5c9c9dacc, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -2895,7 +2895,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c17dbafca7738294484b8b73d31a564a, type: 3}
+  - {fileID: 2100000, guid: d433bf458cb9fbc49940acb5c9c9dacc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2924,14 +2924,14 @@ RectTransform:
   m_GameObject: {fileID: 764725510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.51167, y: 0.51167, z: 0.51167}
+  m_LocalScale: {x: 0.35786712, y: 0.35786712, z: 0.35786712}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.79, y: 6.48}
+  m_AnchoredPosition: {x: 18.81, y: 4.69}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &774841107
@@ -2991,7 +2991,7 @@ TextMesh:
   m_FontSize: 50
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: c17dbafca7738294484b8b73d31a564a, type: 3}
+  m_Font: {fileID: 12800000, guid: d433bf458cb9fbc49940acb5c9c9dacc, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -3012,7 +3012,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c17dbafca7738294484b8b73d31a564a, type: 3}
+  - {fileID: 2100000, guid: d433bf458cb9fbc49940acb5c9c9dacc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3664,6 +3664,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57631c9ac9aeffb4dae824839facb57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  moonPlayer: {fileID: 0}
+  moonDeath: {fileID: 0}
+  moonRevive: {fileID: 0}
+  sunPlayer: {fileID: 0}
+  sunDeath: {fileID: 0}
+  sunRevive: {fileID: 0}
 --- !u!61 &978497798
 BoxCollider2D:
   m_ObjectHideFlags: 0
