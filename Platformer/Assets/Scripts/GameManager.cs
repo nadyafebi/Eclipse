@@ -22,8 +22,11 @@ public class GameManager : MonoBehaviour
     private Transform SpawnPosition; //The location that the player will spawn
 
     private string currentScene;
+    private bool gameFinished = false;
 
     private const string START_MENU = "StartMenu";
+    private const string ENDING_SCENE = "ChooseEnding";
+
 
     void Awake()
     {
@@ -98,6 +101,10 @@ public class GameManager : MonoBehaviour
     private void OnNewScene(Scene next, LoadSceneMode mode)
     {
         currentScene = next.name;
+        if (next.name == ENDING_SCENE)
+        {
+            SetGameFinished(true);
+        }
     }
 
     public void ToggleMenu()
@@ -126,11 +133,21 @@ public class GameManager : MonoBehaviour
         string name = SceneManager.GetActiveScene().name;
         if (name.StartsWith("Ending"))
         {
-            SceneManager.LoadScene("ChooseEnding");
+            SceneManager.LoadScene(ENDING_SCENE);
         }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    public void SetGameFinished(bool state)
+    {
+        gameFinished = state;
+    }
+
+    public bool IsGameFinished()
+    {
+        return gameFinished;
     }
 }

@@ -32,6 +32,7 @@ public class EndMenu : MonoBehaviour
         LunaButton.onClick.AddListener(Luna);
         SolButton.onClick.AddListener(Sol);
         BothButton.onClick.AddListener(Both);
+        GameManager.Get().SetGameFinished(true);
     }
 
     void Update()

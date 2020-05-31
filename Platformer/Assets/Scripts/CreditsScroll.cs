@@ -7,12 +7,18 @@ using UnityEngine.SceneManagement;
 public class CreditsScroll : MonoBehaviour
 {
     public string startMenuScene;
+    public string chooseEndingScene;
     public float duration = 10.0f;
     public Image fadeOut;
+    public GameObject endingButton;
+    public GameObject menuButton;
+
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameManager.Get();
         StartCoroutine(fadeAway());
     }
 
@@ -27,6 +33,25 @@ public class CreditsScroll : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
 
+        if (gameManager.IsGameFinished())
+        {
+            endingButton.SetActive(true);
+            menuButton.SetActive(true);
+        }
+        else
+        {
+            SceneManager.LoadScene(startMenuScene);
+        }
+    }
+
+    public void ChooseAnotherEnding()
+    {
+        SceneManager.LoadScene(chooseEndingScene);
+    }
+
+    public void BackToStartMenu()
+    {
+        gameManager.SetGameFinished(false);
         SceneManager.LoadScene(startMenuScene);
     }
 }
