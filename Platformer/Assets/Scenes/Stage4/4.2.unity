@@ -8514,6 +8514,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpBlock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1447613156743467016, guid: 7b3791d56c913c14482cb46d74846bbe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1447613156743467013, guid: 7b3791d56c913c14482cb46d74846bbe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8568,6 +8573,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447613156743467018, guid: 7b3791d56c913c14482cb46d74846bbe,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1593350187
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447613156743467018, guid: 7b3791d56c913c14482cb46d74846bbe,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b3791d56c913c14482cb46d74846bbe, type: 3}
@@ -8777,6 +8792,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpBlock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1447613156743467016, guid: 7b3791d56c913c14482cb46d74846bbe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1447613156743467013, guid: 7b3791d56c913c14482cb46d74846bbe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8846,6 +8866,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447613156743467018, guid: 7b3791d56c913c14482cb46d74846bbe,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1593350187
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447613156743467018, guid: 7b3791d56c913c14482cb46d74846bbe,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b3791d56c913c14482cb46d74846bbe, type: 3}
@@ -26022,6 +26052,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1714357403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714357405}
+  - component: {fileID: 1714357404}
+  m_Layer: 0
+  m_Name: WorldSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1714357404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714357403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa027c3afa12fde469f07d1b339047f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  sunWorld: {fileID: 0}
+  moonWorld: {fileID: 0}
+  sunPlayer: {fileID: 0}
+  moonPlayer: {fileID: 0}
+  shadow: {fileID: 4146359236922083771, guid: e3bfc4f398d804645b9694442cd31146, type: 3}
+  cameraControl: {fileID: 0}
+--- !u!4 &1714357405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714357403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1822645780
 PrefabInstance:
   m_ObjectHideFlags: 0
