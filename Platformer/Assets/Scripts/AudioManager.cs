@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
 
     void OnNewScene(Scene next, LoadSceneMode mode)
     {
-        if (next.name[0] != currentScene[0])
+        if (next.name[0] != currentScene[0] || musics.ContainsKey(next.name))
         {
             PlayBGM(next.name);
         }
