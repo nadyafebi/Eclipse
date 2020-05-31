@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
     private string currentScene;
 
-    void Start()
+    void Awake()
     {
         player = GetComponent<AudioSource>();
 
@@ -39,9 +39,9 @@ public class AudioManager : MonoBehaviour
         PlayBGM(currentScene);
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float volumeScale = 1f)
     {
-        player.PlayOneShot(clip);
+        player.PlayOneShot(clip, volumeScale);
     }
 
     void PlayBGM(string sceneName)
