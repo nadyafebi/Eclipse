@@ -2867,6 +2867,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57631c9ac9aeffb4dae824839facb57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  moonPlayer: {fileID: 0}
+  moonDeath: {fileID: 0}
+  moonRevive: {fileID: 0}
+  sunPlayer: {fileID: 0}
+  sunDeath: {fileID: 0}
+  sunRevive: {fileID: 0}
 --- !u!61 &565261568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104117,6 +104124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215560260409224448, guid: cfa7363daa03ca1418615da9826df34d,
+        type: 3}
+      propertyPath: currentColor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa7363daa03ca1418615da9826df34d, type: 3}

@@ -3681,6 +3681,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6215560260409224448, guid: cfa7363daa03ca1418615da9826df34d,
+        type: 3}
+      propertyPath: currentColor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa7363daa03ca1418615da9826df34d, type: 3}
 --- !u!1 &762383448
@@ -6366,6 +6371,85 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1146559269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3512020728868242397, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_Name
+      value: Sfx Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617586815904508076, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921014197523111512, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 81cc5b8d93325d24bbcb77375f163e30, type: 3}
+    - target: {fileID: 3921014197523111512, guid: e73fa7fb5d1855245979206000b9335f,
+        type: 3}
+      propertyPath: volumeScale
+      value: 0.604
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e73fa7fb5d1855245979206000b9335f, type: 3}
 --- !u!1 &1152502900
 GameObject:
   m_ObjectHideFlags: 0
