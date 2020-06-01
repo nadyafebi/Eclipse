@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7784fde3db7e3c949b66a699f88e67d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoName: Evidence of Mor.Ending 0.mp4
   waitTime: 92
   nextScene: CreditScene
 --- !u!328 &208704238

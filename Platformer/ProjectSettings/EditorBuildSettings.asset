@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage1/1.1 Spawn.unity
     guid: 87b6d1618ec543e49a47860db479025b
-  - enabled: 1
-    path: Assets/Scenes/Stage1/1.2 Tree.unity
-    guid: 11d4770035c2f964097e9c137bb2e1b4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Stage1/1.2.5 Tutorial.unity
     guid: 9754f6f3104c90b498495afc432443c2
