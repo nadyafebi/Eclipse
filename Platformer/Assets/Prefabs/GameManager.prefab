@@ -81,6 +81,18 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: cfa639b9697e1ec42b41333f5f12c8be, type: 3}
   - name: 4
     clip: {fileID: 8300000, guid: d3be9cdf5bec5fe4e930ff55a965614d, type: 3}
+  - name: Intro
+    clip: {fileID: 0}
+  - name: EndingLunaAscends
+    clip: {fileID: 0}
+  - name: EndingSolAscends
+    clip: {fileID: 0}
+  - name: EndingBothAscend
+    clip: {fileID: 0}
+  - name: EndingIdle
+    clip: {fileID: 0}
+  - name: ChooseEnding
+    clip: {fileID: 8300000, guid: 866ceb5e0f5dbc74e81e58a8019ac977, type: 3}
 --- !u!82 &8620774119592826227
 AudioSource:
   m_ObjectHideFlags: 0
