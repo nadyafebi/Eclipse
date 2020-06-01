@@ -92,10 +92,16 @@ public class GameManager : MonoBehaviour
     //Restarts Players health and position with a .5 second delay
     IEnumerator RespawnPlayer(PlayerHealth playerHealth)
     {
-        yield return new WaitForSeconds(.1f);
-        playerHealth.HealDamage(playerHealth.maxHealth);
-        player.transform.position = SpawnPosition.position;
-
+        if (SpawnPosition != null)
+        {
+            yield return new WaitForSeconds(.1f);
+            playerHealth.HealDamage(playerHealth.maxHealth);
+            player.transform.position = SpawnPosition.position;
+        }
+        else
+        {
+            RestartScene();
+        }
     }
 
     private void OnNewScene(Scene next, LoadSceneMode mode)
