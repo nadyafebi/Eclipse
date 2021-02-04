@@ -2,7 +2,7 @@
 
 <p align="center">A 2D platformer game where you explore and solve obstacles!</p>
 
-<p align="center"><a href="https://miu7.itch.io/eclipse">Play on itch.io</a></p>
+<p align="center"><a href="https://amily.itch.io/eclipse">Play on itch.io</a></p>
 
 ## Credits
 
